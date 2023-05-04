@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zihuizh.github.io">
-  <title>Archives: 2023 | 秋水时至</title>
+  <title>秋水时至</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Lab02-WebLab02-File Q1: Lambda12345&gt;&gt;&gt; b&#x3D;lambda: 3&gt;&gt;&gt; bFunction&gt;&gt;&gt; b()3 lambda函数缺少那一块（以：为分界线，左侧参数，右侧结果）就看作没有好了。b就是一个没有输入参数的函数。 12345&gt;&gt;&gt; x &#x3D; None&gt;&gt;&gt; x&gt;&amp;g">
+<meta property="og:type" content="article">
 <meta property="og:title" content="秋水时至">
-<meta property="og:url" content="https://zihuizh.github.io/archives/2023/index.html">
+<meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/index.html">
 <meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="Lab02-WebLab02-File Q1: Lambda12345&gt;&gt;&gt; b&#x3D;lambda: 3&gt;&gt;&gt; bFunction&gt;&gt;&gt; b()3 lambda函数缺少那一块（以：为分界线，左侧参数，右侧结果）就看作没有好了。b就是一个没有输入参数的函数。 12345&gt;&gt;&gt; x &#x3D; None&gt;&gt;&gt; x&gt;&amp;g">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T14:08:45.185Z">
+<meta property="article:modified_time" content="2023-05-04T15:19:50.738Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
   
@@ -146,241 +150,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CS-计算机/CS61A/Lab02" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/lab/lab02/">Lab02-Web</a><br><a href="E:\Code\CS61A\lab\lab02">Lab02-File</a></p>
+<h1 id="Q1-Lambda"><a href="#Q1-Lambda" class="headerlink" title="Q1: Lambda"></a>Q1: Lambda</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=<span class="keyword">lambda</span>: <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">Function</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b()</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>lambda函数缺少那一块（以：为分界线，左侧参数，右侧结果）就看作没有好了。<br>b就是一个没有输入参数的函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="literal">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">lambda</span> x: x</span><br><span class="line">Function</span><br></pre></td></tr></table></figure>
+<p>x&#x3D;None对后面操作无影响</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># Pay attention to the scope of variables</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>e = <span class="keyword">lambda</span> x: <span class="keyword">lambda</span> y: <span class="keyword">lambda</span>: x + y + z</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>e(<span class="number">0</span>)(<span class="number">1</span>)()</span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>一个变量一个变量往里面代</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># Try drawing an environment diagram if you get stuck!</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>higher_order_lambda = <span class="keyword">lambda</span> f: <span class="keyword">lambda</span> x: f(x)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>g = <span class="keyword">lambda</span> x: x * x</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>higher_order_lambda(<span class="number">2</span>)(g) <span class="comment"># Which argument belongs to which function call?</span></span><br><span class="line">Error</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>higher_order_lambda(g)(<span class="number">2</span>)</span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>注意参数顺序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print_lambda = <span class="keyword">lambda</span> z: <span class="built_in">print</span>(z)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print_lambda</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>one_thousand = print_lambda(<span class="number">1000</span>)</span><br><span class="line"><span class="number">1000</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>one_thousand</span><br><span class="line"><span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<p>lambda函数执行冒号后的语句，但因为没有返回值，所以等于None</p>
+<h1 id="Q2-High-Order-Functions"><a href="#Q2-High-Order-Functions" class="headerlink" title="Q2: High Order Functions"></a>Q2: High Order Functions</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">cake</span>():</span><br><span class="line"><span class="meta">... </span>   <span class="built_in">print</span>(<span class="string">&#x27;beets&#x27;</span>)</span><br><span class="line"><span class="meta">... </span>   <span class="keyword">def</span> <span class="title function_">pie</span>():</span><br><span class="line"><span class="meta">... </span>       <span class="built_in">print</span>(<span class="string">&#x27;sweets&#x27;</span>)</span><br><span class="line"><span class="meta">... </span>       <span class="keyword">return</span> <span class="string">&#x27;cake&#x27;</span></span><br><span class="line"><span class="meta">... </span>   <span class="keyword">return</span> pie</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>chocolate = cake()</span><br><span class="line">beets</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>chocolate</span><br><span class="line">Function</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>chocolate()</span><br><span class="line">(line <span class="number">1</span>) sweets</span><br><span class="line">(line <span class="number">2</span>) <span class="string">&#x27;cake&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>chocolate就是pie</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>more_chocolate, more_cake = chocolate(), cake</span><br><span class="line">sweets</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>more_chocolate</span><br><span class="line"><span class="string">&#x27;cake&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">snake</span>(<span class="params">x, y</span>):</span><br><span class="line"><span class="meta">... </span>   <span class="keyword">if</span> cake == more_cake:</span><br><span class="line"><span class="meta">... </span>       <span class="keyword">return</span> chocolate</span><br><span class="line"><span class="meta">... </span>   <span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>       <span class="keyword">return</span> x + y</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>snake(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line">Function</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>snake(<span class="number">10</span>, <span class="number">20</span>)()</span><br><span class="line">(line <span class="number">1</span>) sweets</span><br><span class="line">(line <span class="number">2</span>) <span class="string">&#x27;cake&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cake = <span class="string">&#x27;cake&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>snake(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="number">30</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Q3-Lambdas-and-Currying"><a href="#Q3-Lambdas-and-Currying" class="headerlink" title="Q3: Lambdas and Currying"></a>Q3: Lambdas and Currying</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lambda_curry2</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Returns a Curried version of a two-argument function FUNC.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; from operator import add, mul, mod</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; curried_add = lambda_curry2(add)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three = curried_add(3)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three(5)</span></span><br><span class="line"><span class="string">    8</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; curried_mul = lambda_curry2(mul)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; mul_5 = curried_mul(5)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; mul_5(42)</span></span><br><span class="line"><span class="string">    210</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; lambda_curry2(mod)(123)(10)</span></span><br><span class="line"><span class="string">    3</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> x: <span class="keyword">lambda</span> y: func(x,y)</span><br></pre></td></tr></table></figure>
+<p>lambda_curry2(func)返回了一个函数f1，这个函数接收x返回一个函数f2，f2再接收y即可返回func(x,y)，因此返回的是一个有两层lambda的函数，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lambda_curry2 = <span class="keyword">lambda</span> func: <span class="keyword">lambda</span> x: <span class="keyword">lambda</span> y: func(x,y)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lambda_curry2(add)(<span class="number">12</span>)(<span class="number">10</span>)</span><br><span class="line"><span class="number">22</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Q4-Count-van-Count"><a href="#Q4-Count-van-Count" class="headerlink" title="Q4: Count van Count"></a>Q4: Count van Count</h1><p>这个比较简单</p>
+<h1 id="Q5-Both-Paths"><a href="#Q5-Both-Paths" class="headerlink" title="Q5: Both Paths"></a>Q5: Both Paths</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">both_paths</span>(<span class="params">sofar=<span class="string">&quot;S&quot;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; up, down = both_paths()</span></span><br><span class="line"><span class="string">    S</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; upup, updown = up()</span></span><br><span class="line"><span class="string">    SU</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; downup, downdown = down()</span></span><br><span class="line"><span class="string">    SD</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; _ = upup()</span></span><br><span class="line"><span class="string">    SUU</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">up</span>(<span class="params">sofar = sofar</span>):</span><br><span class="line">        sofar += <span class="string">&quot;U&quot;</span></span><br><span class="line">        <span class="keyword">return</span> both_paths(sofar)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">down</span>(<span class="params">sofar = sofar</span>):</span><br><span class="line">        sofar += <span class="string">&quot;D&quot;</span></span><br><span class="line">        <span class="keyword">return</span> both_paths(sofar)</span><br><span class="line">    <span class="built_in">print</span>(sofar)</span><br><span class="line">    <span class="keyword">return</span> up,down</span><br></pre></td></tr></table></figure>
+<p>both_paths()给出的是up和down两个函数，up()和down()给出的不是函数，而是both_path(sofar)，是一个值，迭代下去又变成up和down了。<br>其实这个函数可以看作一个迭代函数，不同的是up和down在迭代过程中进行了操作，代表了不同的迭代方向。</p>
+<h1 id="Q6-Make-Adder"><a href="#Q6-Make-Adder" class="headerlink" title="Q6: Make Adder"></a>Q6: Make Adder</h1><p>Draw the environment diagram for the following code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">9</span> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">make_adder</span>(<span class="params">n</span>): </span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">lambda</span> k: k + n </span><br><span class="line">add_ten = make_adder(n+<span class="number">1</span>) </span><br></pre></td></tr></table></figure>
+<h1 id="Q7-Lambda-the-Environment-Diagram"><a href="#Q7-Lambda-the-Environment-Diagram" class="headerlink" title="Q7: Lambda the Environment Diagram"></a>Q7: Lambda the Environment Diagram</h1><h1 id="Q8-Composite-Identity-Function"><a href="#Q8-Composite-Identity-Function" class="headerlink" title="Q8: Composite Identity Function"></a>Q8: Composite Identity Function</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">composite_identity</span>(<span class="params">f, g</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Return a function with one parameter x that returns True if f(g(x)) is equal to g(f(x)). You can assume the result of g(x) is a valid input for f and vice versa.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_one = lambda x: x + 1        # adds one to x</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; square = lambda x: x**2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b1 = composite_identity(square, add_one)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b1(0)                            # (0 + 1)^2 == 0^2 + 1</span></span><br><span class="line"><span class="string">    True</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b1(4)                            # (4 + 1)^2 != 4^2 + 1</span></span><br><span class="line"><span class="string">    False</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">equal</span>(<span class="params">x</span>):</span><br><span class="line">        <span class="keyword">return</span> (compose1(f,g)(x)==compose1(g,f)(x))</span><br><span class="line">    <span class="keyword">return</span> equal</span><br></pre></td></tr></table></figure>
+<p>返回值是判断式直接返回就行了，不要再画蛇添足，用if…else判断再给True和False</p>
+<h1 id="Q9-I-Heard-You-Liked-Functions…"><a href="#Q9-I-Heard-You-Liked-Functions…" class="headerlink" title="Q9: I Heard You Liked Functions…"></a>Q9: I Heard You Liked Functions…</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cycle</span>(<span class="params">f1, f2, f3</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Returns a function that is itself a higher-order function.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; def add1(x):</span></span><br><span class="line"><span class="string">    ...     return x + 1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; def times2(x):</span></span><br><span class="line"><span class="string">    ...     return x * 2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; def add3(x):</span></span><br><span class="line"><span class="string">    ...     return x + 3</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; my_cycle = cycle(add1, times2, add3)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; identity = my_cycle(0)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; identity(5)</span></span><br><span class="line"><span class="string">    5</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_one_then_double = my_cycle(2)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_one_then_double(1)</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; do_all_functions = my_cycle(3)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; do_all_functions(2)</span></span><br><span class="line"><span class="string">    9</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; do_more_than_a_cycle = my_cycle(4)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; do_more_than_a_cycle(2)</span></span><br><span class="line"><span class="string">    10</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; do_two_cycles = my_cycle(6)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; do_two_cycles(1)</span></span><br><span class="line"><span class="string">    19</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">n</span>):</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">lambda</span> x: x</span><br><span class="line">        b = n % <span class="number">3</span></span><br><span class="line">        <span class="keyword">if</span>(b==<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">return</span> compose1(f1,f(n-<span class="number">1</span>))</span><br><span class="line">        <span class="keyword">elif</span>(b==<span class="number">2</span>):</span><br><span class="line">            <span class="keyword">return</span> compose1(f2,f(n-<span class="number">1</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> compose1(f3,f(n-<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> f</span><br></pre></td></tr></table></figure>
+<p>这里犯了一个错误，直接<code>return f1(f(n-1))</code>，结果报错，因为输入的值不正确，应该是<code>return f1(f(n-1)(x))</code>， 参考CS61A-master里面的结果，如果直接让两个函数结构合成，而不是先求一个值再求一个值，应该使用之前写的compose1函数</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/hello-world/" class="archive-article-date">
-  	<time datetime="2023-05-04T15:00:43.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/04/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Numpy/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Homework%203/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Q1-Lambda"><span class="toc-number">1.</span> <span class="toc-text">Q1: Lambda</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q2-High-Order-Functions"><span class="toc-number">2.</span> <span class="toc-text">Q2: High Order Functions</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q3-Lambdas-and-Currying"><span class="toc-number">3.</span> <span class="toc-text">Q3: Lambdas and Currying</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q4-Count-van-Count"><span class="toc-number">4.</span> <span class="toc-text">Q4: Count van Count</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q5-Both-Paths"><span class="toc-number">5.</span> <span class="toc-text">Q5: Both Paths</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q6-Make-Adder"><span class="toc-number">6.</span> <span class="toc-text">Q6: Make Adder</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q7-Lambda-the-Environment-Diagram"><span class="toc-number">7.</span> <span class="toc-text">Q7: Lambda the Environment Diagram</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q8-Composite-Identity-Function"><span class="toc-number">8.</span> <span class="toc-text">Q8: Composite Identity Function</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q9-I-Heard-You-Liked-Functions%E2%80%A6"><span class="toc-number">9.</span> <span class="toc-text">Q9: I Heard You Liked Functions…</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab03/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab04/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="page-number" href="/archives/2023/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -404,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

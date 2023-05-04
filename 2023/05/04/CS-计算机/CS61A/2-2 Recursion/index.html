@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zihuizh.github.io">
-  <title>Archives: 2023 | 秋水时至</title>
+  <title>秋水时至</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Recursive Functions Definition: A function is called recursive if the body of that function calls itself,either directly or indirectly.就类似[[2-1 Environment Diagrams#Self-Reference]]一样12345678910111213">
+<meta property="og:type" content="article">
 <meta property="og:title" content="秋水时至">
-<meta property="og:url" content="https://zihuizh.github.io/archives/2023/index.html">
+<meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/2-2%20Recursion/index.html">
 <meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="Recursive Functions Definition: A function is called recursive if the body of that function calls itself,either directly or indirectly.就类似[[2-1 Environment Diagrams#Self-Reference]]一样12345678910111213">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T14:08:45.166Z">
+<meta property="article:modified_time" content="2023-05-04T15:19:50.733Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
   
@@ -146,241 +150,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CS-计算机/CS61A/2-2 Recursion" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Recursive-Functions"><a href="#Recursive-Functions" class="headerlink" title="Recursive Functions"></a>Recursive Functions</h1><ul>
+<li><strong>Definition</strong>: A function is called recursive if the body of that function calls itself,<br>either directly or indirectly.<br>就类似[[2-1 Environment Diagrams#Self-Reference]]一样<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">split</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Split a positive integer into all but its last digit and its last digit.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> n // <span class="number">10</span>, n % <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sum_digits</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the sum of the digits of positive integer n.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sum_digits(9)</span></span><br><span class="line"><span class="string">    9</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sum_digits(18117)</span></span><br><span class="line"><span class="string">    18</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sum_digits(9437184)</span></span><br><span class="line"><span class="string">    36</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sum_digits(11408855402054064613470328848384)</span></span><br><span class="line"><span class="string">    126</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">10</span>:  <span class="comment"># Base cases</span></span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">else</span>:  <span class="comment"># Recursive cases</span></span><br><span class="line">        all_but_last, last = split(n)</span><br><span class="line">        <span class="keyword">return</span> sum_digits(all_but_last) + last <span class="comment"># 分解为前项位数和和最后一位</span></span><br></pre></td></tr></table></figure>
+The Anatomy of a Recursive Function</li>
+<li>The def statement header is similar to other functions</li>
+<li>Conditional statements check for base cases</li>
+<li>Base cases are evaluated without recursive calls</li>
+<li>Recursive cases are evaluated with recursive calls</li>
+</ul>
+<h1 id="Recursive-in-Environment-Diagrams"><a href="#Recursive-in-Environment-Diagrams" class="headerlink" title="Recursive in Environment Diagrams"></a>Recursive in Environment Diagrams</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fact_iter</span>(<span class="params">n</span>):</span><br><span class="line">    total, k = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k &lt;= n:</span><br><span class="line">        total, k = total * k, k + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fact</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n * fact(n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The same function fact is called multiple times</li>
+<li>Different frames keep track of the different arguments in each call</li>
+<li>What n evaluates to depends upon the current environment</li>
+<li>Each call to fact solves a simpler problem than the last: smaller n<br><strong>Iteration(迭代) is a special case of recursion(递归)</strong><br>迭代：<br>$$n!&#x3D;\prod_{k&#x3D;1}^nk$$<br>递归：<br>$$n!&#x3D;\left{\begin{align}&amp;1\quad &amp;if\ \ n&#x3D;0\<br>&amp;n*(n-1)!\quad &amp;otherwise<br>\end{align}\right.$$<br>两种表达方式。</li>
+</ul>
+<h1 id="Verifying-Recursive-Functions"><a href="#Verifying-Recursive-Functions" class="headerlink" title="Verifying Recursive Functions"></a>Verifying Recursive Functions</h1><p>Is fact implemented correctly?</p>
+<ol>
+<li>Verify the base case</li>
+<li>Treat fact as a functional abstraction!</li>
+<li>Assume that fact(n-1) is correct</li>
+<li>Verify that fact(n) is correct<br>类似数学归纳法</li>
+</ol>
+<h1 id="Mutual-Recursion"><a href="#Mutual-Recursion" class="headerlink" title="Mutual Recursion"></a>Mutual Recursion</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">luhn_sum</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the digit sum of n computed by the Luhn algorithm.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; luhn_sum(2)</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; luhn_sum(12)</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; luhn_sum(42)</span></span><br><span class="line"><span class="string">    10</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; luhn_sum(138743)</span></span><br><span class="line"><span class="string">    30</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; luhn_sum(5105105105105100) # example Mastercard</span></span><br><span class="line"><span class="string">    20</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; luhn_sum(4012888888881881) # example Visa</span></span><br><span class="line"><span class="string">    90</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; luhn_sum(79927398713) # from Wikipedia</span></span><br><span class="line"><span class="string">    70</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">10</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        all_but_last, last = split(n)</span><br><span class="line">        <span class="keyword">return</span> luhn_sum_double(all_but_last) + last</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">luhn_sum_double</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the Luhn sum of n, doubling the last digit.&quot;&quot;&quot;</span></span><br><span class="line">    all_but_last, last = split(n)</span><br><span class="line">    luhn_digit = sum_digits(<span class="number">2</span> * last)</span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">10</span>:</span><br><span class="line">        <span class="keyword">return</span> luhn_digit</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> luhn_sum(all_but_last) + luhn_digit</span><br></pre></td></tr></table></figure>
+<p>Two functions call each other</p>
+<h1 id="Recursion-and-Iteration"><a href="#Recursion-and-Iteration" class="headerlink" title="Recursion and Iteration"></a>Recursion and Iteration</h1><p><strong>Iteration(迭代) is a special case of recursion(递归)</strong></p>
+<ul>
+<li>Converting Recursion to Iteration<br>Idea: Figure out what state must be maintained by the iterative function.</li>
+<li>Converting Iteration to Recursion<br>Idea: The state of an iteration can be passed as arguments.</li>
+</ul>
+<h1 id="Order-of-Recursive-Calls"><a href="#Order-of-Recursive-Calls" class="headerlink" title="Order of Recursive Calls"></a>Order of Recursive Calls</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cascade</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Print a cascade of prefixes of n.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; cascade(1234)</span></span><br><span class="line"><span class="string">    1234</span></span><br><span class="line"><span class="string">    123</span></span><br><span class="line"><span class="string">    12</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    12</span></span><br><span class="line"><span class="string">    123</span></span><br><span class="line"><span class="string">    1234</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">10</span>:</span><br><span class="line">        <span class="built_in">print</span>(n)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(n)</span><br><span class="line">        cascade(n//<span class="number">10</span>)</span><br><span class="line">        <span class="built_in">print</span>(n)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Each cascade frame is from a different call to cascade.</li>
+<li>Until the Return value appears, that call has not completed.</li>
+<li>Any statement can appear before or after the recursive call.<br>通过打印的顺序可以发现，递归的执行顺序是从外面剥洋葱，剥到核心后，在从里面把洋葱皮一层层盖上，剥洋葱就是函数里面迭代语句之前的部分，盖上就是后面的部分，所以才有这种输出。</li>
+<li>If two implementations are equally clear, then shorter is usually better</li>
+<li>In this case, the longer implementation is more clear (at least to me)</li>
+<li>When learning to write recursive functions, put the base cases first</li>
+<li>Both are recursive functions, even though only the first has typical structure</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/hello-world/" class="archive-article-date">
-  	<time datetime="2023-05-04T15:00:43.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/04/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/2-2%20Recursion/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Numpy/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Homework%203/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/2-1%20Environment%20Diagrams/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Recursive-Functions"><span class="toc-number">1.</span> <span class="toc-text">Recursive Functions</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Recursive-in-Environment-Diagrams"><span class="toc-number">2.</span> <span class="toc-text">Recursive in Environment Diagrams</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Verifying-Recursive-Functions"><span class="toc-number">3.</span> <span class="toc-text">Verifying Recursive Functions</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mutual-Recursion"><span class="toc-number">4.</span> <span class="toc-text">Mutual Recursion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Recursion-and-Iteration"><span class="toc-number">5.</span> <span class="toc-text">Recursion and Iteration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Order-of-Recursive-Calls"><span class="toc-number">6.</span> <span class="toc-text">Order of Recursive Calls</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab03/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab04/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="page-number" href="/archives/2023/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -404,8 +346,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

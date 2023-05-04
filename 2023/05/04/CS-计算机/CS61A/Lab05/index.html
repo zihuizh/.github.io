@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zihuizh.github.io">
-  <title>Archives: 2023 | 秋水时至</title>
+  <title>秋水时至</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Lab05-WebLab05-File TopicsList Comprehensions1[&lt;expression&gt; for &lt;element&gt; in &lt;sequence&gt; if &lt;conditional&gt;] Example: 12&gt;&gt;&gt; [i**2 for i in [1, 2, 3, 4] if i % 2 &#x3D;&#x3D; 0][4,">
+<meta property="og:type" content="article">
 <meta property="og:title" content="秋水时至">
-<meta property="og:url" content="https://zihuizh.github.io/archives/2023/index.html">
+<meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/index.html">
 <meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="Lab05-WebLab05-File TopicsList Comprehensions1[&lt;expression&gt; for &lt;element&gt; in &lt;sequence&gt; if &lt;conditional&gt;] Example: 12&gt;&gt;&gt; [i**2 for i in [1, 2, 3, 4] if i % 2 &#x3D;&#x3D; 0][4,">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T14:08:45.215Z">
+<meta property="article:modified_time" content="2023-05-04T15:19:50.746Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
   
@@ -146,241 +150,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CS-计算机/CS61A/Lab05" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/lab/lab05/#list-comprehensions">Lab05-Web</a><br><a href="E:\Code\CS61A\lab\lab05">Lab05-File</a></p>
+<h1 id="Topics"><a href="#Topics" class="headerlink" title="Topics"></a>Topics</h1><h2 id="List-Comprehensions"><a href="#List-Comprehensions" class="headerlink" title="List Comprehensions"></a>List Comprehensions</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&lt;expression&gt; <span class="keyword">for</span> &lt;element&gt; <span class="keyword">in</span> &lt;sequence&gt; <span class="keyword">if</span> &lt;conditional&gt;]</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>]</span><br><span class="line">[<span class="number">4</span>, <span class="number">16</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><p>Our <code>tree</code> abstract data type consists of a root and a list of its <code>branches</code>. To create a tree and access its root value and branches, use the following constructor and selectors:</p>
+<ul>
+<li>Constructor<ul>
+<li><code>tree(label, branches=[])</code>: creates a tree object with the given <code>label</code> value at its root node and list of <code>branches</code>. Notice that the second argument to this constructor, <code>branches</code>, is optional - if you want to make a tree with no branches, leave this argument empty.</li>
+</ul>
+</li>
+<li>Selectors<ul>
+<li><code>label(tree)</code>: returns the value in the root node of <code>tree</code>.</li>
+<li><code>branches(tree)</code>: returns the list of branches of the given <code>tree</code>.</li>
+</ul>
+</li>
+<li>Convenience function<ul>
+<li><code>is_leaf(tree)</code>: returns <code>True</code> if <code>tree</code>‘s list of <code>branches</code> is empty, and <code>False</code> otherwise.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">number_tree = tree(<span class="number">1</span>, </span><br><span class="line">			[tree(<span class="number">2</span>), </span><br><span class="line">			tree(<span class="number">3</span>, </span><br><span class="line">				[tree(<span class="number">4</span>), tree(<span class="number">5</span>)]), </span><br><span class="line">			tree(<span class="number">6</span>, </span><br><span class="line">				[tree(<span class="number">7</span>)])])</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h1 id="Q1-Coordinates"><a href="#Q1-Coordinates" class="headerlink" title="Q1: Coordinates"></a>Q1: Coordinates</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">coords</span>(<span class="params">fn, seq, lower, upper</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; seq = [-4, -2, 0, 1, 3]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; fn = lambda x: x**2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; coords(fn, seq, 1, 9)</span></span><br><span class="line"><span class="string">    [[-2, 4], [1, 1], [3, 9]]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">return</span> [[i,fn(i)] <span class="keyword">for</span> i <span class="keyword">in</span> seq <span class="keyword">if</span> (lower &lt;= fn(i) &lt;= upper)]</span><br></pre></td></tr></table></figure>
+
+<h1 id="Q2-Riffle-Shuffle"><a href="#Q2-Riffle-Shuffle" class="headerlink" title="Q2: Riffle Shuffle"></a>Q2: Riffle Shuffle</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">riffle</span>(<span class="params">deck</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Produces a single, perfect riffle shuffle of DECK, consisting of</span></span><br><span class="line"><span class="string">    DECK[0], DECK[M], DECK[1], DECK[M+1], ... where M is position of the</span></span><br><span class="line"><span class="string">    second half of the deck.  Assume that len(DECK) is even.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; riffle([3, 4, 5, 6])</span></span><br><span class="line"><span class="string">    [3, 5, 4, 6]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; riffle(range(20))</span></span><br><span class="line"><span class="string">    [0, 10, 1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">return</span> [deck[i//<span class="number">2</span>+(i%<span class="number">2</span>)*<span class="built_in">len</span>(deck)//<span class="number">2</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(deck))]</span><br></pre></td></tr></table></figure>
+
+<h1 id="Q3-Finding-Berries"><a href="#Q3-Finding-Berries" class="headerlink" title="Q3: Finding Berries!"></a>Q3: Finding Berries!</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">berry_finder</span>(<span class="params">t</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Returns True if t contains a node with the value &#x27;berry&#x27; and </span></span><br><span class="line"><span class="string">    False otherwise.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; scrat = tree(&#x27;berry&#x27;)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; berry_finder(scrat)</span></span><br><span class="line"><span class="string">    True</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sproul = tree(&#x27;roots&#x27;, [tree(&#x27;branch1&#x27;, [tree(&#x27;leaf&#x27;), tree(&#x27;berry&#x27;)]), tree(&#x27;branch2&#x27;)])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; berry_finder(sproul)</span></span><br><span class="line"><span class="string">    True</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; numbers = tree(1, [tree(2), tree(3, [tree(4), tree(5)]), tree(6, [tree(7)])])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; berry_finder(numbers)</span></span><br><span class="line"><span class="string">    False</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; t = tree(1, [tree(&#x27;berry&#x27;,[tree(&#x27;not berry&#x27;)])])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; berry_finder(t)</span></span><br><span class="line"><span class="string">    True</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    flag = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">str</span>(label(t)) == <span class="string">&#x27;berry&#x27;</span>):</span><br><span class="line">        flag = flag <span class="keyword">or</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">for</span> branch <span class="keyword">in</span> branches(t):</span><br><span class="line">        flag = flag <span class="keyword">or</span> berry_finder(branch)</span><br><span class="line">    <span class="keyword">return</span> flag</span><br></pre></td></tr></table></figure>
+<p>这一题刚开始一直出问题，主要是因为没搞清楚<code>or</code>的关系，直接return，导致沿着<code>tree</code>最左侧返回一个值就停止运行了，没有遍历<code>tree</code>中所有元素。<br>更改后，<code>tree</code>下所有<code>branch</code>的值都得到确定。</p>
+<h1 id="Q4-Sprout-leaves"><a href="#Q4-Sprout-leaves" class="headerlink" title="Q4: Sprout leaves"></a>Q4: Sprout leaves</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sprout_leaves</span>(<span class="params">t, leaves</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Sprout new leaves containing the data in leaves at each leaf in</span></span><br><span class="line"><span class="string">    the original tree t and return the resulting tree.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; t1 = tree(1, [tree(2), tree(3)])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; print_tree(t1)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">      2</span></span><br><span class="line"><span class="string">      3</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; new1 = sprout_leaves(t1, [4, 5])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; print_tree(new1)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">      2</span></span><br><span class="line"><span class="string">        4</span></span><br><span class="line"><span class="string">        5</span></span><br><span class="line"><span class="string">      3</span></span><br><span class="line"><span class="string">        4</span></span><br><span class="line"><span class="string">        5</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    newtree = [label(t)]</span><br><span class="line">    <span class="keyword">for</span> branch <span class="keyword">in</span> branches(t):</span><br><span class="line">        <span class="keyword">if</span>(is_leaf(branch)):</span><br><span class="line">            <span class="keyword">for</span> leave <span class="keyword">in</span> leaves:</span><br><span class="line">                branch.append([leave])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            branch = sprout_leaves(branch,leaves)</span><br><span class="line">        newtree.append(branch)</span><br></pre></td></tr></table></figure>
+<p>这样如果是<code>leaf</code>，就在后面添加上<code>[leave1,leave2...,leaven]</code>等等，实现添加分支的功能，若不是，则进入分支中继续查找直至找到为止。</p>
+<h1 id="Q5-Don’t-violate-the-abstraction-barrier"><a href="#Q5-Don’t-violate-the-abstraction-barrier" class="headerlink" title="Q5: Don’t violate the abstraction barrier!"></a>Q5: Don’t violate the abstraction barrier!</h1><ul>
+<li>实现<code>ADT</code>抽象数据类型要注意无论这个类型是怎么实现的，调用它的代码都要能实现（无论是列表还是字典等等）</li>
+<li>因此<code>sprout_leaves</code>的程序不正确，因为它假定<code>tree</code>是使用列表实现的，使用了<code>append</code>功能，如果使用字典功能实现，就会出现错误，因此进行更正：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sprout_leaves</span>(<span class="params">t, leaves</span>):</span><br><span class="line">    <span class="keyword">if</span>(is_leaf(t)):</span><br><span class="line">        <span class="keyword">return</span> tree(label(t),[tree(x) <span class="keyword">for</span> x <span class="keyword">in</span> leaves])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> tree(label(t),[sprout_leaves(branch,leaves) <span class="keyword">for</span> branch <span class="keyword">in</span> branches(t)])</span><br></pre></td></tr></table></figure>
+采用这种方法只使用了ADT提供的创建和查询函数，无论ADT怎么实现都不影响。</li>
+</ul>
+<h1 id="Q6-Add-trees"><a href="#Q6-Add-trees" class="headerlink" title="Q6: Add trees"></a>Q6: Add trees</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add_trees</span>(<span class="params">t1, t2</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; print_tree(add_trees(tree(2, [tree(3, [tree(4), tree(5)])]), \</span></span><br><span class="line"><span class="string">    tree(2, [tree(3, [tree(4)]), tree(5)])))</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">      6</span></span><br><span class="line"><span class="string">        8</span></span><br><span class="line"><span class="string">        5</span></span><br><span class="line"><span class="string">      5</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">if</span> (is_leaf(t1) <span class="keyword">and</span> is_leaf(t2)):</span><br><span class="line">        <span class="keyword">return</span> tree(label(t1)+label(t2))</span><br><span class="line">    b1 = branches(t1)</span><br><span class="line">    b2 = branches(t2)</span><br><span class="line">    l = <span class="built_in">min</span>(<span class="built_in">len</span>(b1),<span class="built_in">len</span>(b2))</span><br><span class="line">    branch = [add_trees(a,b) <span class="keyword">for</span> a,b <span class="keyword">in</span> <span class="built_in">zip</span>(b1[:l],b2[:l])]</span><br><span class="line">    branch += b1[l:] <span class="keyword">if</span> <span class="built_in">len</span>(b1)&gt;<span class="built_in">len</span>(b2) <span class="keyword">else</span> b2[l:]</span><br><span class="line">    <span class="keyword">return</span> tree(label(t1)+label(t2),branch)</span><br></pre></td></tr></table></figure>
+<p>首先检查t1和t2，如果都是<code>leaf</code>，就直接返回相加的<code>tree</code>。如果不是，先把<code>b1</code>、<code>b2</code>都有的分支相加<code>add_trees()</code>，再在<code>branch</code>后面添加多出来的部分。</p>
+<h1 id="Q7-Successor-Tables"><a href="#Q7-Successor-Tables" class="headerlink" title="Q7: Successor Tables"></a>Q7: Successor Tables</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">build_successors_table</span>(<span class="params">tokens</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return a dictionary: keys are words; values are lists of successors.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; text = [&#x27;We&#x27;, &#x27;came&#x27;, &#x27;to&#x27;, &#x27;investigate&#x27;, &#x27;,&#x27;, &#x27;catch&#x27;, &#x27;bad&#x27;, &#x27;guys&#x27;, &#x27;and&#x27;, &#x27;to&#x27;, &#x27;eat&#x27;, &#x27;pie&#x27;, &#x27;.&#x27;]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; table = build_successors_table(text)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sorted(table)</span></span><br><span class="line"><span class="string">    [&#x27;,&#x27;, &#x27;.&#x27;, &#x27;We&#x27;, &#x27;and&#x27;, &#x27;bad&#x27;, &#x27;came&#x27;, &#x27;catch&#x27;, &#x27;eat&#x27;, &#x27;guys&#x27;, &#x27;investigate&#x27;, &#x27;pie&#x27;, &#x27;to&#x27;]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; table[&#x27;to&#x27;]</span></span><br><span class="line"><span class="string">    [&#x27;investigate&#x27;, &#x27;eat&#x27;]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; table[&#x27;pie&#x27;]</span></span><br><span class="line"><span class="string">    [&#x27;.&#x27;]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; table[&#x27;.&#x27;]</span></span><br><span class="line"><span class="string">    [&#x27;We&#x27;]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    table = &#123;&#125;</span><br><span class="line">    prev = <span class="string">&#x27;.&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> tokens:</span><br><span class="line">        <span class="keyword">if</span> prev <span class="keyword">not</span> <span class="keyword">in</span> table:</span><br><span class="line">            <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">            table[prev] = [word]</span><br><span class="line">        <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">        table[prev] = table[prev] <span class="keyword">if</span> word <span class="keyword">in</span> table[prev] <span class="keyword">else</span> table[prev]+[word]  <span class="comment"># 去重</span></span><br><span class="line">        prev = word</span><br><span class="line">    <span class="keyword">return</span> table</span><br></pre></td></tr></table></figure>
+
+<h1 id="Q8-Construct-the-Sentence"><a href="#Q8-Construct-the-Sentence" class="headerlink" title="Q8: Construct the Sentence"></a>Q8: Construct the Sentence</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/hello-world/" class="archive-article-date">
-  	<time datetime="2023-05-04T15:00:43.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/04/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Numpy/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab04/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Topics"><span class="toc-number">1.</span> <span class="toc-text">Topics</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#List-Comprehensions"><span class="toc-number">1.1.</span> <span class="toc-text">List Comprehensions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Trees"><span class="toc-number">1.2.</span> <span class="toc-text">Trees</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q1-Coordinates"><span class="toc-number">2.</span> <span class="toc-text">Q1: Coordinates</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q2-Riffle-Shuffle"><span class="toc-number">3.</span> <span class="toc-text">Q2: Riffle Shuffle</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q3-Finding-Berries"><span class="toc-number">4.</span> <span class="toc-text">Q3: Finding Berries!</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q4-Sprout-leaves"><span class="toc-number">5.</span> <span class="toc-text">Q4: Sprout leaves</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q5-Don%E2%80%99t-violate-the-abstraction-barrier"><span class="toc-number">6.</span> <span class="toc-text">Q5: Don’t violate the abstraction barrier!</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q6-Add-trees"><span class="toc-number">7.</span> <span class="toc-text">Q6: Add trees</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q7-Successor-Tables"><span class="toc-number">8.</span> <span class="toc-text">Q7: Successor Tables</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q8-Construct-the-Sentence"><span class="toc-number">9.</span> <span class="toc-text">Q8: Construct the Sentence</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab03/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab04/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="page-number" href="/archives/2023/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -404,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zihuizh.github.io">
-  <title>Archives: 2023 | 秋水时至</title>
+  <title>秋水时至</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Textbook1.3 Defining New FunctionsWeb  编程语言中所具有的特性： 数字和四则运算符是基础的内置数据与函数。 函数之间的嵌套提供了组合运算符的方法。 将名称与数值绑定在一起提供了一种有限的抽象方法。   定义函数——一种更强大的抽象方法，可以将名字（函数名）与一系列运算绑定在一起，并看作一个单元。 How to define a function :def &amp;l">
+<meta property="og:type" content="article">
 <meta property="og:title" content="秋水时至">
-<meta property="og:url" content="https://zihuizh.github.io/archives/2023/index.html">
+<meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/index.html">
 <meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="Textbook1.3 Defining New FunctionsWeb  编程语言中所具有的特性： 数字和四则运算符是基础的内置数据与函数。 函数之间的嵌套提供了组合运算符的方法。 将名称与数值绑定在一起提供了一种有限的抽象方法。   定义函数——一种更强大的抽象方法，可以将名字（函数名）与一系列运算绑定在一起，并看作一个单元。 How to define a function :def &amp;l">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T14:08:45.227Z">
+<meta property="article:modified_time" content="2023-05-04T15:19:50.751Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
   
@@ -146,241 +150,190 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CS-计算机/CS61A/Textbook chapter 1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Textbook"><a href="#Textbook" class="headerlink" title="Textbook"></a>Textbook</h1><h2 id="1-3-Defining-New-Functions"><a href="#1-3-Defining-New-Functions" class="headerlink" title="1.3 Defining New Functions"></a>1.3 Defining New Functions</h2><p><a target="_blank" rel="noopener" href="http://composingprograms.com/pages/13-defining-new-functions.html">Web</a></p>
+<ul>
+<li>编程语言中所具有的特性：<ol>
+<li>数字和四则运算符是基础的内置数据与函数。</li>
+<li>函数之间的嵌套提供了组合运算符的方法。</li>
+<li>将名称与数值绑定在一起提供了一种有限的抽象方法。</li>
+</ol>
+</li>
+<li>定义函数——一种更强大的抽象方法，可以将名字（函数名）与一系列运算绑定在一起，并看作一个单元。</li>
+<li>How to define a function :<br><code>def &lt;name&gt;(&lt;formal parameters&gt;):   </code>return <return expression>&#96;<br>使用&lt;def&gt;语句来定义函数，包括函数名&lt;name&gt;以及使用句号分割的形参表&lt;formal parameters&gt;；在函数体的最后，使用&lt;return&gt;语句返回数值（要计算的表达式）。<br>四个空格的缩进是必须的，用以表示层级关系。</li>
+<li>定义函数与赋值都可以为名字绑定新值，原有的关系会被破坏。[[00-CS61A#Video 2]]</li>
+</ul>
+<h3 id="1-3-1-Environments"><a href="#1-3-1-Environments" class="headerlink" title="1.3.1 Environments"></a>1.3.1 Environments</h3><ul>
+<li>环境(Environment)是由一系列结构(frame)组成的。每一个结构中都包含了绑定关系，将名字同值联系起来。环境中只有一个全局结构。</li>
+<li>环境图(Environment diagrams)中展示了环境中各个结构以及结构中名字同值的关系。<a target="_blank" rel="noopener" href="https://pythontutor.com/composingprograms.html#mode=edit">Online Python Tutor</a><ul>
+<li>从中可以看出&lt;import&gt;以及&lt;def&gt;语句可以将名字同函数固有名称(intrinsic name)联系起来。</li>
+<li>环境图中左侧为名称，右侧为值（包括数字、数组、函数固有名称），名称可以变换与值的绑定关系，右侧的函数固有名称则不变。</li>
+<li>一个函数可以有多个函数名，但这个函数本身只有一个固有名称。</li>
+<li>函数签名：函数形参的描述。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-2-Calling-User-Defined-Functions"><a href="#1-3-2-Calling-User-Defined-Functions" class="headerlink" title="1.3.2 Calling User-Defined Functions"></a>1.3.2 Calling User-Defined Functions</h3><p>在执行一个函数时，Python首先会计算运算符以及参数表达式，计算完成后再带入函数当中。[[00-CS61A#Control Evaluation Rule for Call Expression]]<br>执行函数时会形成一个**本地结构(local frame)**：</p>
+<ul>
+<li>在这一新的结构中的形参绑定输入的参数。</li>
+<li>在这一新的结构中执行函数体。<br>函数应用的每一个实例（函数每被执行一次）都会形成对应的local frame。<br><code>A name evaluates to the value bound to that name in the earliest frame of the current environment in which that name is found.</code><br>这句话的含义是一个名字所代表的值是当前环境中最早找到的那一个。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> mul</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">square</span>)</span><br><span class="line">	<span class="keyword">return</span> mul(square,square)</span><br><span class="line">square(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+例如在这样一段程序中，在global frame中，square是一个函数，在square的local frame中，square是2。那么在<code>return mul(square,square)</code>中，square代表2，因为在local frame中这是距离最近的值了。同样的，mul就代表函数，因为在local frame 中找不到对应的值，而在global frame中就找到是一个函数。</li>
+</ul>
+<h3 id="1-3-3-Example-Calling-a-User-Defined-Function"><a href="#1-3-3-Example-Calling-a-User-Defined-Function" class="headerlink" title="1.3.3 Example: Calling a User-Defined Function"></a>1.3.3 Example: Calling a User-Defined Function</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> add, mul</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>):</span><br><span class="line">	<span class="keyword">return</span> mul(x, x)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sum_squares</span>(<span class="params">x, y</span>):</span><br><span class="line">	<span class="keyword">return</span> add(square(x), square(y))</span><br><span class="line">result = sum_squares(<span class="number">5</span>, <span class="number">12</span>)</span><br></pre></td></tr></table></figure>
+<p>首先执行<code>sum_square(5,12)</code>，生成local frame，其中x&#x3D;5，y&#x3D;12。<br>对于<code>add(square(x), square(y))</code>，执行add()首先要计算参数值，首先从括号最内部左侧的square(x)开始，在square新建的square local frame中再次将x绑定为5，计算并返回25，之后类似地可以得到144。<br>在add local frame中，可以计算得到189。</p>
+<ul>
+<li>名称与值绑定。</li>
+<li>函数每被执行一次就会生成一个本地结构（作用域）。</li>
+</ul>
+<h3 id="1-3-4-Local-Names"><a href="#1-3-4-Local-Names" class="headerlink" title="1.3.4 Local Names"></a>1.3.4 Local Names</h3><p>函数的形参名称不影响函数的行为（因为最终都会与值绑定）。<br>这就要求形参名称是局部变量，这样不同函数之间不会相互影响。<br>同时，函数体内部的本地名称作用域也仅仅局限在函数体内部。</p>
+<h3 id="1-3-5-Choosing-Names"><a href="#1-3-5-Choosing-Names" class="headerlink" title="1.3.5 Choosing Names"></a>1.3.5 Choosing Names</h3><p>命名指南：</p>
+<ol>
+<li>函数名为小写，单词用下划线分隔。鼓励使用描述性名称。</li>
+<li>函数名通常对应解释器应用于参数的操作（例如：print、add、square）或结果量的名称（例如：max、abs、sum）。</li>
+<li>参数名称为小写，单词用下划线分隔。最好使用单字名称。</li>
+<li>参数名称应该同时反映参数在函数中的角色，而不仅仅反映允许的参数类型。</li>
+<li>单字母参数名称在其作用明显时可以接受，但应避免使用“l”(小写L)、“O”或“I”(大写i)，以避免与数字混淆。</li>
+</ol>
+<h3 id="1-3-6-Functions-as-Abstractions"><a href="#1-3-6-Functions-as-Abstractions" class="headerlink" title="1.3.6 Functions as Abstractions"></a>1.3.6 Functions as Abstractions</h3><p>函数的定义应该能够隐藏细节。函数的用户可能没有自己编写函数，是从另一个程序员那里获得的“黑盒”。程序员不需要知道如何实现函数，但仍能使用它。Python库具有此属性，许多开发人员使用这里定义的函数，但很少关心它们如何实现。<br>我们关心函数的以下属性：</p>
+<ul>
+<li>定义域</li>
+<li>值域</li>
+<li>目的（参数与输出值的关系）<br>但并不关心函数内部如何实现。</li>
+</ul>
+<h3 id="1-3-7-Operators"><a href="#1-3-7-Operators" class="headerlink" title="1.3.7 Operators"></a>1.3.7 Operators</h3><p>[[00-CS61A#Miscellaneous Python Features]]</p>
+<h2 id="1-4-Designing-Functions"><a href="#1-4-Designing-Functions" class="headerlink" title="1.4 Designing Functions"></a>1.4 Designing Functions</h2><h3 id="1-4-1-Documentation"><a href="#1-4-1-Documentation" class="headerlink" title="1.4.1 Documentation"></a>1.4.1 Documentation</h3><h3 id="1-4-2-Default-Argument-Values"><a href="#1-4-2-Default-Argument-Values" class="headerlink" title="1.4.2 Default Argument Values"></a>1.4.2 Default Argument Values</h3><h2 id="1-5-Control"><a href="#1-5-Control" class="headerlink" title="1.5 Control"></a>1.5 Control</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/hello-world/" class="archive-article-date">
-  	<time datetime="2023-05-04T15:00:43.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/04/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Numpy/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Textbook"><span class="toc-number">1.</span> <span class="toc-text">Textbook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-Defining-New-Functions"><span class="toc-number">1.1.</span> <span class="toc-text">1.3 Defining New Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-Environments"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.3.1 Environments</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-Calling-User-Defined-Functions"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.3.2 Calling User-Defined Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-Example-Calling-a-User-Defined-Function"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3.3 Example: Calling a User-Defined Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-4-Local-Names"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.3.4 Local Names</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-5-Choosing-Names"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.3.5 Choosing Names</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-6-Functions-as-Abstractions"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.3.6 Functions as Abstractions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-7-Operators"><span class="toc-number">1.1.7.</span> <span class="toc-text">1.3.7 Operators</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-Designing-Functions"><span class="toc-number">1.2.</span> <span class="toc-text">1.4 Designing Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-Documentation"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.4.1 Documentation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-2-Default-Argument-Values"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.4.2 Default Argument Values</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-Control"><span class="toc-number">1.3.</span> <span class="toc-text">1.5 Control</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab03/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab04/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="page-number" href="/archives/2023/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -404,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zihuizh.github.io">
-  <title>Archives: 2023 | 秋水时至</title>
+  <title>秋水时至</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Video 3CS61A Summer 2020 Lecture 3Code Print and None123456&gt;&gt;&gt; print(None)None&gt;&gt;&gt; print(print(1),print(2))None None&gt;&gt;&gt; print(print(print(1),print(2)))None  None代表无，没有什么从函数中返">
+<meta property="og:type" content="article">
 <meta property="og:title" content="秋水时至">
-<meta property="og:url" content="https://zihuizh.github.io/archives/2023/index.html">
+<meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-3%20Control%20&%20environment/index.html">
 <meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="Video 3CS61A Summer 2020 Lecture 3Code Print and None123456&gt;&gt;&gt; print(None)None&gt;&gt;&gt; print(print(1),print(2))None None&gt;&gt;&gt; print(print(print(1),print(2)))None  None代表无，没有什么从函数中返">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T14:08:45.130Z">
+<meta property="article:modified_time" content="2023-05-04T15:19:50.723Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
   
@@ -146,241 +150,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CS-计算机/CS61A/1-3 Control &amp; environment" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Video-3"><a href="#Video-3" class="headerlink" title="Video 3"></a>Video 3</h1><p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLx38hZJ5RLZfaBTgnl9EdoB3JqZl5c8G3">CS61A Summer 2020 Lecture 3</a><br><a target="_blank" rel="noopener" href="https://code.cs61a.org/su20/03.py">Code</a></p>
+<h2 id="Print-and-None"><a href="#Print-and-None" class="headerlink" title="Print and None"></a>Print and None</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="literal">None</span>)</span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">print</span>(<span class="number">1</span>),<span class="built_in">print</span>(<span class="number">2</span>))</span><br><span class="line"><span class="literal">None</span> <span class="literal">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">print</span>(<span class="built_in">print</span>(<span class="number">1</span>),<span class="built_in">print</span>(<span class="number">2</span>)))</span><br><span class="line"><span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>None代表无，没有什么从函数中返回。</li>
+<li>Pure function &amp; Non-Pure function</li>
+<li>Non-Pure function 有副作用，例如print()，在输出None之外，还在屏幕上展示输入参数。</li>
+</ul>
+<h2 id="Miscellaneous-Python-Features"><a href="#Miscellaneous-Python-Features" class="headerlink" title="Miscellaneous Python Features"></a>Miscellaneous Python Features</h2><ul>
+<li>+、*这类操作符其实就是内置函数add()、mul()等</li>
+<li>&#x2F;、&#x2F;&#x2F;、%的区别<ul>
+<li>&#x2F;, truediv()  真实值</li>
+<li>&#x2F;&#x2F;, floordiv()  整数值</li>
+<li>%, mod()  余数  和上面的搭配使用</li>
+</ul>
+</li>
+<li>一个函数可以返回多项值</li>
+<li>在编辑器中（vim等）编辑程序，并使用Python执行。<br>  <code>python -i exemple.py</code><br>  -i可以打开Python运行环境，动态查看结果。</li>
+<li>doctsing，方便查看与维护，对函数的说明，还可以加上示例doctest。<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/257274585">doctest使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/doctest.html">doctest-Python中文文档</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="statements"><a href="#statements" class="headerlink" title="statements"></a>statements</h2><p>解释器执行来达到某一效果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;header&gt;:</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line">&lt;separating header&gt;:</span><br><span class="line">	&lt;statement&gt;</span><br></pre></td></tr></table></figure>
+<p>这一个整体称为语句，而一至三行可以称为分句(clause)，二三行是suite。</p>
+<h2 id="Conditional-statements-条件语句"><a href="#Conditional-statements-条件语句" class="headerlink" title="Conditional statements 条件语句"></a>Conditional statements 条件语句</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">	<span class="keyword">return</span> -x</span><br><span class="line"><span class="keyword">elif</span> x == <span class="number">0</span>:</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<p>这一段程序是一个statement，三个clause，每一个clause中都跟着一行suite。<br>条件语句总包含一个if，以及数量不定（从0到更多）的elif，以及0或1个else。</p>
+<ul>
+<li>布尔值</li>
+</ul>
+<h2 id="iteration"><a href="#iteration" class="headerlink" title="iteration"></a>iteration</h2><ul>
+<li>while statement<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	i, total = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">3</span>:</span><br><span class="line">	i = i + <span class="number">1</span></span><br><span class="line">	total = total + i</span><br><span class="line">total</span><br></pre></td></tr></table></figure>
+首先检查while中条件(head expression)是否成立，为真时执行suite。</li>
+<li>iteration example<br>斐波那契数列<br>$F(0)&#x3D;0,\ F(1)&#x3D;1,\ F(n)&#x3D;F(n-1)+F(n-2)\quad [0,1,1,2,3,5,8,……]$<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">	<span class="string">&quot;&quot;&quot;Compute the nth Fibonacci number, for N &gt;= 1.&quot;&quot;&quot;</span></span><br><span class="line">	pred,curr=<span class="number">0</span>,<span class="number">1</span>  <span class="comment"># 0th and 1st Fibonacci number</span></span><br><span class="line">	k=<span class="number">1</span>            <span class="comment"># curr is the kth Fibonacci number</span></span><br><span class="line">	<span class="keyword">while</span> k&lt;n:</span><br><span class="line">		pred,curr=curr,pred+curr</span><br><span class="line">		k=k+<span class="number">1</span></span><br><span class="line">	<span class="keyword">return</span> curr</span><br></pre></td></tr></table></figure>
+思考一下怎么改让这一函数也能输出fib(0)？<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pred,curr=<span class="number">1</span>,<span class="number">0</span></span><br><span class="line">k=<span class="number">0</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h2><ul>
+<li>search函数<br>返回主程序中并提供函数执行的值，函数执行至return为止。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">f</span>):</span><br><span class="line"><span class="string">&quot;&quot;&quot;Return the smallest non-negative integer x for which f(x) is a true value.&quot;&quot;&quot;</span></span><br><span class="line">x = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	<span class="keyword">if</span> f(x):</span><br><span class="line">		<span class="keyword">return</span> x</span><br><span class="line">	x += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+还可以再简化：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> f(x):</span><br><span class="line">	x += <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+search()函数的功能是从0开始遍历正整数，寻找到符合f(x)的最小整数并输出。[[00-CS61A#Higher-Order Functions]]，这是一个高阶函数。</li>
+<li>高阶函数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">inverse</span>(<span class="params">f</span>):</span><br><span class="line"><span class="string">&quot;&quot;&quot;Return a function g(y) that returns x such that f(x) == y.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"><span class="meta">&gt;&gt;&gt; </span>sqrt = inverse(square)</span></span><br><span class="line"><span class="string"><span class="meta">&gt;&gt;&gt; </span>sqrt(16)</span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">lambda</span> y: search(<span class="keyword">lambda</span> x: f(x) == y)</span><br></pre></td></tr></table></figure>
+inverse是这样一个函数：<br>它输出的是一个函数：<code>lambda y: search(lambda x: f(x) == y)</code><br>输出的这一函数可以根据输入值y寻找符合f(x)=&#x3D;y的最小正整数x。<br>也就是这一函数的功能是给定y值，调用search()函数，遍历找到使f(x)=&#x3D;y的x值。<br>这也事实上就是f(x)的反函数（当然只能返回最小x值，而不是所有x值）。<br>因此便有<code>sqrt = inverse(square)</code><br>此中妙处，需要细细体会。</li>
+</ul>
+<h2 id="Designing-Functions"><a href="#Designing-Functions" class="headerlink" title="Designing Functions"></a>Designing Functions</h2><ul>
+<li>domain 定义域</li>
+<li>range 值域</li>
+<li>对于pure function，函数的行为就是输入与输出的关系。[[#Print and None]]<table>
+<thead>
+<tr>
+<th align="center">item</th>
+<th align="center">square(x)</th>
+<th align="center">fib(n) [[#iteration]]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">domain</td>
+<td align="center">任意实数</td>
+<td align="center">正整数</td>
+</tr>
+<tr>
+<td align="center">range</td>
+<td align="center">正数</td>
+<td align="center">正整数</td>
+</tr>
+<tr>
+<td align="center">behavior</td>
+<td align="center">输入值的平方</td>
+<td align="center">斐波那契数列第n项</td>
+</tr>
+</tbody></table>
+</li>
+<li>指南<ol>
+<li>Gvie each function <strong>exactly</strong> one job. 单一明确的任务。（要剪子不要瑞士军刀）</li>
+<li>Don’t repeat yourself. Implement a process just once, but execute it many times. 一个过程，多次执行。</li>
+<li>Define functions generally. 通用性。</li>
+</ol>
+</li>
+</ul>
+<h2 id="Control-Evaluation-Rule-for-Call-Expression"><a href="#Control-Evaluation-Rule-for-Call-Expression" class="headerlink" title="Control (Evaluation Rule for Call Expression)"></a>Control (Evaluation Rule for Call Expression)</h2><p>是否可以构造这样一个函数？ [[#Homework 1 Variables Functions Control]]Q5<br><code>if(header expression , &quot;if&quot; suite , &quot;else&quot; suite)</code><br>即三个参数分别为要判断的表达式、为真时执行的语句、为假时执行的语句。</p>
+<ul>
+<li>这是不行的。因为if函数在调用时会自动执行各项参数，因此三个表达式(语句)都会被执行一遍，也就不能完成函数的功能。</li>
+<li>调用时的执行顺序为首先执行各项参数语句，再将执行结果带入到函数当中。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">if_</span>(<span class="params">c, t, f</span>):</span><br><span class="line">    <span class="keyword">if</span> c:</span><br><span class="line">        <span class="keyword">return</span> t</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> f</span><br></pre></td></tr></table></figure>
+上面所示即为if()函数的具体结构，那么在下面所示的函数中来应用它：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">real_sqrt</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the real part of the square root of x.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; real_sqrt(4)</span></span><br><span class="line"><span class="string">    2.0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; real_sqrt(-4)</span></span><br><span class="line"><span class="string">    0.0</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> sqrt(x)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.0</span></span><br><span class="line">    <span class="comment"># if_(x &gt; 0, sqrt(x), 0.0)</span></span><br></pre></td></tr></table></figure>
+这样是可以运行成功的，即正数开方就是正常运算，负数开方则实部为0。但是如果采用<code>if_(x &gt; 0, sqrt(x), 0.0)</code> 函数，计算<code>real_sqrt(-4)</code>则会出现报错，为什么？<br>就是因为执行时会顺序首先是计算<code>-4&gt;0</code>，<code>sqrt(-4)</code>以及<code>0.0</code>这三个参数，再去执行函数，尽管函数体中<code>sqrt(-4)</code>不会被执行，但是参数已经预先被执行了，计算过程中<code>sqrt(-4)</code>会出现报错。而如果使用正常的if语句，则<code>return sqrt(-4)</code>根本不会执行，这就是两个的区别。<br>重点就是掌握call expression的执行顺序。</li>
+</ul>
+<h2 id="Control-Expressions"><a href="#Control-Expressions" class="headerlink" title="Control Expressions"></a>Control Expressions</h2><ul>
+<li>logical operators<ul>
+<li>and，返回遇到的第一个假值，如果没遇到假值，就返回遇到的最后一个真值。</li>
+<li>or，返回遇到的第一个真值，如果没遇到真值，就返回遇到的最后一个假值。</li>
+<li>not，返回True &#x2F; False。<br>[[Textbook chapter 1]]</li>
+</ul>
+</li>
+</ul>
+<h1 id="Lab-1-Variables-amp-Functions-Control"><a href="#Lab-1-Variables-amp-Functions-Control" class="headerlink" title="Lab 1: Variables &amp; Functions, Control"></a>Lab 1: Variables &amp; Functions, Control</h1><p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/lab/lab01/">Web</a><br><a href="E:\Code\CS61A\lab\lab01">File</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/hello-world/" class="archive-article-date">
-  	<time datetime="2023-05-04T15:00:43.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/04/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-3%20Control%20&%20environment/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Numpy/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-4%20Higher-Order%20Functions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-2%20Functions/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Video-3"><span class="toc-number">1.</span> <span class="toc-text">Video 3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Print-and-None"><span class="toc-number">1.1.</span> <span class="toc-text">Print and None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Miscellaneous-Python-Features"><span class="toc-number">1.2.</span> <span class="toc-text">Miscellaneous Python Features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#statements"><span class="toc-number">1.3.</span> <span class="toc-text">statements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conditional-statements-%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.</span> <span class="toc-text">Conditional statements 条件语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iteration"><span class="toc-number">1.5.</span> <span class="toc-text">iteration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Return"><span class="toc-number">1.6.</span> <span class="toc-text">Return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Designing-Functions"><span class="toc-number">1.7.</span> <span class="toc-text">Designing Functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Control-Evaluation-Rule-for-Call-Expression"><span class="toc-number">1.8.</span> <span class="toc-text">Control (Evaluation Rule for Call Expression)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Control-Expressions"><span class="toc-number">1.9.</span> <span class="toc-text">Control Expressions</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab-1-Variables-amp-Functions-Control"><span class="toc-number">2.</span> <span class="toc-text">Lab 1: Variables &amp; Functions, Control</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab03/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab04/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="page-number" href="/archives/2023/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -404,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

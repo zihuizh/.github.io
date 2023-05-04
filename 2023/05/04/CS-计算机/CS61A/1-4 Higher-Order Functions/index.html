@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zihuizh.github.io">
-  <title>Archives: 2023 | 秋水时至</title>
+  <title>秋水时至</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="VideoHigher-Order Functions Higher-Order Function例子——计算图形面积：   Shape square circle hexagon    Area $r^2$ $\pi r^2$ $\frac{3\sqrt3}{2} r^2$   可以看出，面积和边长（半径）都有着一定关系，那么我们可以使用统一的area函数来计算。      12345from">
+<meta property="og:type" content="article">
 <meta property="og:title" content="秋水时至">
-<meta property="og:url" content="https://zihuizh.github.io/archives/2023/index.html">
+<meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-4%20Higher-Order%20Functions/index.html">
 <meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="VideoHigher-Order Functions Higher-Order Function例子——计算图形面积：   Shape square circle hexagon    Area $r^2$ $\pi r^2$ $\frac{3\sqrt3}{2} r^2$   可以看出，面积和边长（半径）都有着一定关系，那么我们可以使用统一的area函数来计算。      12345from">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T14:08:45.135Z">
+<meta property="article:modified_time" content="2023-05-04T15:19:50.727Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
   
@@ -146,241 +150,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CS-计算机/CS61A/1-4 Higher-Order Functions" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h1><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=UlXvz-34Me0&list=PLx38hZJ5RLZc7vG1NTLyhsbnXmoK3xMBw&index=1">Higher-Order Functions</a></p>
+<h2 id="Higher-Order-Function"><a href="#Higher-Order-Function" class="headerlink" title="Higher-Order Function"></a>Higher-Order Function</h2><h3 id="例子——计算图形面积："><a href="#例子——计算图形面积：" class="headerlink" title="例子——计算图形面积："></a>例子——计算图形面积：</h3><table>
+<thead>
+<tr>
+<th><strong>Shape</strong></th>
+<th>square</th>
+<th>circle</th>
+<th>hexagon</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Area</strong></td>
+<td>$r^2$</td>
+<td>$\pi r^2$</td>
+<td>$\frac{3\sqrt3}{2} r^2$</td>
+</tr>
+<tr>
+<td>可以看出，面积和边长（半径）都有着一定关系，那么我们可以使用统一的area函数来计算。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pi, sqrt</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">area</span>(<span class="params">r, shape_constant</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the area of a shape from length measurement R.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">assert</span> r &gt; <span class="number">0</span>, <span class="string">&#x27;A length must be positive&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> r * r * shape_constant</span><br></pre></td></tr></table></figure>
+<p>只需要确定shape_constant即可确定形状，计算式是通用的，常数项是可以变化的，只需要变更常数值即可。</p>
+<h3 id="Functions-as-operand-操作对象"><a href="#Functions-as-operand-操作对象" class="headerlink" title="Functions as operand(操作对象)"></a>Functions as operand(操作对象)</h3><p>函数中所通用的部分（如上例所示）可以是更加复杂的算式：$\sum_{i&#x3D;1}^{n}f(i)$。<br>其中求和是通用的，$f(i)$则是可以变化的部分，也就是函数也可以作为参数输入进另一个函数中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">identity</span>(<span class="params">k</span>):</span><br><span class="line">    <span class="keyword">return</span> k</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cube</span>(<span class="params">k</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">pow</span>(k, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">summation</span>(<span class="params">n, term</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Sum the first N terms of a sequence.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; summation(5, cube)</span></span><br><span class="line"><span class="string">    225</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    total, k = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k &lt;= n:</span><br><span class="line">        total, k = total + term(k), k + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+<p>在此例当中，identity()与cube()就作为$f(i)$这一参数输入进summation(n,term)中。term就是相加的每一项，summation则用来实现加和。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">pi_term</span>(<span class="params">k</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">8</span> / mul(k * <span class="number">4</span> - <span class="number">3</span>, k * <span class="number">4</span> - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">summation(<span class="number">1000000</span>, pi_term)</span><br></pre></td></tr></table></figure>
+<p>因为：<br>$$\pi &#x3D;\sum_{k&#x3D;1}^{\infty} \frac{8}{(4k-3)(4k-1)}$$<br>所以可以用pi_term()来当作加和项，计算就可以估计pi的值。</p>
+<h3 id="assert语句"><a href="#assert语句" class="headerlink" title="assert语句"></a>assert语句</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;　<span class="keyword">assert</span> <span class="number">3</span> &gt; <span class="number">2</span>, <span class="string">&#x27;Math is broken&#x27;</span></span><br><span class="line">&gt;&gt;&gt;　<span class="keyword">assert</span> <span class="number">2</span> &gt; <span class="number">3</span>, <span class="string">&#x27;That is false&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;AssertionError：That is False&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>当后面的表达式为假值时输出对应字符串。</p>
+<h3 id="Functions-As-Return-Values"><a href="#Functions-As-Return-Values" class="headerlink" title="Functions As Return Values"></a>Functions As Return Values</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">make_adder</span>(<span class="params">n</span>):</span><br><span class="line">	<span class="string">&quot;&quot;&quot;Return a function that takes one argument k and return k+N</span></span><br><span class="line"><span class="string">	</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three = make_adder(3)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three(4)</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">adder</span>(<span class="params">k</span>):</span><br><span class="line">        <span class="keyword">return</span> k + n</span><br><span class="line">    <span class="keyword">return</span> adder</span><br></pre></td></tr></table></figure>
+<p><code>make_adder()</code>可以返回一个函数，这个函数中内含输入参数n，可以与输入实参相加。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;make_adder(<span class="number">1</span>)(<span class="number">2</span>)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>怎么分析？首先是<code>make_adder(1)</code>，返回一个<code>add_one()</code>函数，之后是<code>add_one(2)</code>，计算得到3。表面上是两个数相加，实际上是先返回函数，再将参数输入函数中。</p>
+<h2 id="Example-Sounds"><a href="#Example-Sounds" class="headerlink" title="Example: Sounds"></a>Example: Sounds</h2><h3 id="Wav-Files"><a href="#Wav-Files" class="headerlink" title="Wav Files"></a>Wav Files</h3><p>Waveform Audio File，一种保存音频的简单文件，占用空间较大。<br><a href="file:E:\Code\CS61A\lab\hw02\sound.py">sound.py</a></p>
+<h2 id="Function-Composition"><a href="#Function-Composition" class="headerlink" title="Function Composition"></a>Function Composition</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>):</span><br><span class="line">	<span class="keyword">return</span> x*x</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">triple</span>(<span class="params">x</span>):</span><br><span class="line">	<span class="keyword">return</span> <span class="number">3</span>*x</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">composel</span>(<span class="params">f,g</span>):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">h</span>(<span class="params">x</span>):</span><br><span class="line">		<span class="keyword">return</span> f(g(x))</span><br><span class="line">	<span class="keyword">return</span> h</span><br><span class="line">squiple = compose1(square, triple)</span><br><span class="line">tripare = compose1(triple, square)</span><br><span class="line">squadder = compose1(square, make_adder(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="Function-Currying"><a href="#Function-Currying" class="headerlink" title="Function Currying"></a>Function Currying</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> add, mul</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">curry2</span>(<span class="params">f</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Curry a two-argument function.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; m = curry2(add)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three = m(3)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three(4)</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; m(2)(1)</span></span><br><span class="line"><span class="string">    3</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">g</span>(<span class="params">x</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">h</span>(<span class="params">y</span>):</span><br><span class="line">            <span class="keyword">return</span> f(x, y)</span><br><span class="line">        <span class="keyword">return</span> h</span><br><span class="line">    <span class="keyword">return</span> g</span><br></pre></td></tr></table></figure>
+<p>柯里化能够将输入多个参数的函数转化为多个输入单个参数的函数。</p>
+<h1 id="LAB"><a href="#LAB" class="headerlink" title="LAB"></a>LAB</h1><p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/proj/hog/">Hog</a><br><a href="file:///E:\Code\CS61A\lab\hog">Hog File</a></p>
+<h2 id="Problem-8"><a href="#Problem-8" class="headerlink" title="Problem 8"></a>Problem 8</h2><h3 id="任意数目参数输入-arbitrary-number-of-arguments"><a href="#任意数目参数输入-arbitrary-number-of-arguments" class="headerlink" title="任意数目参数输入(arbitrary number of arguments)"></a>任意数目参数输入(arbitrary number of arguments)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function</span>(<span class="params">*args</span>):</span><br></pre></td></tr></table></figure>
+<p>通过这种方法，可以接收输入进的参数，这些参数以元组(tuples)形式存储</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/hello-world/" class="archive-article-date">
-  	<time datetime="2023-05-04T15:00:43.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/04/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-4%20Higher-Order%20Functions/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Numpy/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/2-1%20Environment%20Diagrams/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-3%20Control%20&%20environment/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Video"><span class="toc-number">1.</span> <span class="toc-text">Video</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Higher-Order-Function"><span class="toc-number">1.1.</span> <span class="toc-text">Higher-Order Function</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E5%9B%BE%E5%BD%A2%E9%9D%A2%E7%A7%AF%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">例子——计算图形面积：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Functions-as-operand-%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">Functions as operand(操作对象)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#assert%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.1.3.</span> <span class="toc-text">assert语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Functions-As-Return-Values"><span class="toc-number">1.1.4.</span> <span class="toc-text">Functions As Return Values</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-Sounds"><span class="toc-number">1.2.</span> <span class="toc-text">Example: Sounds</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Wav-Files"><span class="toc-number">1.2.1.</span> <span class="toc-text">Wav Files</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Function-Composition"><span class="toc-number">1.3.</span> <span class="toc-text">Function Composition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Function-Currying"><span class="toc-number">1.4.</span> <span class="toc-text">Function Currying</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LAB"><span class="toc-number">2.</span> <span class="toc-text">LAB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Problem-8"><span class="toc-number">2.1.</span> <span class="toc-text">Problem 8</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E6%95%B0%E7%9B%AE%E5%8F%82%E6%95%B0%E8%BE%93%E5%85%A5-arbitrary-number-of-arguments"><span class="toc-number">2.1.1.</span> <span class="toc-text">任意数目参数输入(arbitrary number of arguments)</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab03/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab04/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="page-number" href="/archives/2023/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -404,8 +350,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

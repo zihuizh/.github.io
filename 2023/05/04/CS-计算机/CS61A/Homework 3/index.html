@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zihuizh.github.io">
-  <title>Archives: 2023 | 秋水时至</title>
+  <title>秋水时至</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="HW3-WebHW3-File后两题难度很大 Q1: Compose12345678910111213141516171819202122def composer(func&#x3D;lambda x: x):    &quot;&quot;&quot;    Returns two functions -    one holding the composed function so far, and a">
+<meta property="og:type" content="article">
 <meta property="og:title" content="秋水时至">
-<meta property="og:url" content="https://zihuizh.github.io/archives/2023/index.html">
+<meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Homework%203/index.html">
 <meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="HW3-WebHW3-File后两题难度很大 Q1: Compose12345678910111213141516171819202122def composer(func&#x3D;lambda x: x):    &quot;&quot;&quot;    Returns two functions -    one holding the composed function so far, and a">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T14:08:45.175Z">
+<meta property="article:modified_time" content="2023-05-04T15:19:50.735Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
   
@@ -146,241 +150,167 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CS-计算机/CS61A/Homework 3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/hw/hw03/">HW3-Web</a><br><a href="E:\Code\CS61A\lab\hw03">HW3-File</a><br>后两题难度很大</p>
+<h1 id="Q1-Compose"><a href="#Q1-Compose" class="headerlink" title="Q1: Compose"></a>Q1: Compose</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">composer</span>(<span class="params">func=<span class="keyword">lambda</span> x: x</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Returns two functions -</span></span><br><span class="line"><span class="string">    one holding the composed function so far, and another</span></span><br><span class="line"><span class="string">    that can create further composed problems.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_one = lambda x: x + 1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; mul_two = lambda x: x * 2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f, func_adder = composer()</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f1, func_adder = func_adder(add_one)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f1(3)</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f2, func_adder = func_adder(mul_two)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f2(3) # should be 1 + (2*3) = 7</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f3, func_adder = func_adder(add_one)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f3(3) # should be 1 + (2 * (3 + 1)) = 9</span></span><br><span class="line"><span class="string">    9</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">func_adder</span>(<span class="params">g</span>):</span><br><span class="line">        <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">        <span class="keyword">return</span> composer(<span class="keyword">lambda</span> x: func(g(x)))</span><br><span class="line">    <span class="keyword">return</span> func, func_adder</span><br></pre></td></tr></table></figure>
+<p>func_adder要再返回func_adder和f，其实就是里面装了个composer</p>
+<h1 id="Q2-G-function"><a href="#Q2-G-function" class="headerlink" title="Q2: G function"></a>Q2: G function</h1><p>比较简单</p>
+<h1 id="Q3-Missing-Digits"><a href="#Q3-Missing-Digits" class="headerlink" title="Q3: Missing Digits"></a>Q3: Missing Digits</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">missing_digits</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Given a number a that is in sorted, increasing order,</span></span><br><span class="line"><span class="string">    return the number of missing digits in n. A missing digit is</span></span><br><span class="line"><span class="string">    a number between the first and last digit of a that is not in n.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(1248) # 3, 5, 6, 7</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(1122) # No missing numbers</span></span><br><span class="line"><span class="string">    0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(123456) # No missing numbers</span></span><br><span class="line"><span class="string">    0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(3558) # 4, 6, 7</span></span><br><span class="line"><span class="string">    3</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(35578) # 4, 6</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(12456) # 3</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(16789) # 2, 3, 4, 5</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(19) # 2, 3, 4, 5, 6, 7, 8</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">if</span>(n//<span class="number">10</span> == <span class="number">0</span>): </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    k = n%<span class="number">10</span> - (n//<span class="number">10</span>)%<span class="number">10</span> - <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span>(k &lt; <span class="number">0</span>): </span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> missing_digits(n//<span class="number">10</span>) + k</span><br></pre></td></tr></table></figure>
+<p>递归的是函数的表达式</p>
+<h1 id="Q4-Count-change"><a href="#Q4-Count-change" class="headerlink" title="Q4: Count change"></a>Q4: Count change</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">count_change</span>(<span class="params">total</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the number of ways to make change for total.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">partation</span>(<span class="params">total,maxcoin</span>):</span><br><span class="line">        <span class="keyword">if</span>(total == <span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span>(total &lt; <span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">elif</span>(maxcoin == <span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            with_maxcoin = partation(total-maxcoin,maxcoin)</span><br><span class="line">            without_maxcoin = partation(total,maxcoin//<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> with_maxcoin + without_maxcoin</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxcoin</span>(<span class="params">n</span>):</span><br><span class="line">        <span class="keyword">if</span>(<span class="number">2</span>*n &lt; total):</span><br><span class="line">            <span class="keyword">return</span> maxcoin(<span class="number">2</span>*n)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> partation(total,maxcoin(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p><code>partation()</code>借鉴了[[Tree Recursion#Conuting Partitions]]的结构，由于硬币都是2的倍数，因此递归时硬币&#x2F;&#x2F;2，为了通过递归获得最大硬币，又定义了maxcoin函数。<br>61Amaster中的太难了，没看懂</p>
+<h1 id="Q5-Towers-of-Hanoi"><a href="#Q5-Towers-of-Hanoi" class="headerlink" title="Q5: Towers of Hanoi"></a>Q5: Towers of Hanoi</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">move_stack</span>(<span class="params">n, start, end</span>):</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>):</span><br><span class="line">        print_move(start, end)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    other = <span class="number">6</span> - start - end</span><br><span class="line">    move_stack(n-<span class="number">1</span>,start,other)</span><br><span class="line">    move_stack(<span class="number">1</span>,start,end)</span><br><span class="line">    move_stack(n-<span class="number">1</span>,other,end)</span><br></pre></td></tr></table></figure>
+<p>最开始思路错了，把<code>move_stack(1,start,end)</code>放在了第一步，导致问题难以递归。把<code> move_stack(n-1,start,other)</code>放在前面，就使得问题容易递归了。</p>
+<h1 id="Q6-Anonymous-factorial"><a href="#Q6-Anonymous-factorial" class="headerlink" title="Q6: Anonymous factorial"></a>Q6: Anonymous factorial</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">make_anonymous_factorial</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the value of an expression that computes factorial.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; make_anonymous_factorial()(5)</span></span><br><span class="line"><span class="string">    120</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; from construct_check import check</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; # ban any assignments or recursion</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#x27;make_anonymous_factorial&#x27;, [&#x27;Assign&#x27;, &#x27;AugAssign&#x27;, &#x27;FunctionDef&#x27;, &#x27;Recursion&#x27;])</span></span><br><span class="line"><span class="string">    True</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">lambda</span> f:<span class="keyword">lambda</span> x: f(f,x))(<span class="keyword">lambda</span> f,x:<span class="number">1</span> <span class="keyword">if</span> x == <span class="number">1</span> <span class="keyword">else</span>  x*f(f,(x - <span class="number">1</span>)))</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/506640384">知乎</a></p>
+<p>本题为附加题，难度不小。<br>首先，我们可以使用匿名函数来进行递归，比如我们使用匿名函数来计算阶乘：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fact = <span class="keyword">lambda</span> n: <span class="number">1</span> <span class="keyword">if</span> n == <span class="number">1</span> <span class="keyword">else</span> mul(n, fact(sub(n, <span class="number">1</span>)))</span><br><span class="line">fact(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>虽然是使用了匿名函数，但是我们一样有函数名fact。现在希望我们可以实现一个函数，可以在完全没有函数名的情况下实现阶乘。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> sub, mul</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">make_anonymous_factorial</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the value of an expression that computes factorial.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; make_anonymous_factorial()(5)</span></span><br><span class="line"><span class="string">    120</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; from construct_check import check</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; check(HW_SOURCE_FILE, &#x27;make_anonymous_factorial&#x27;, [&#x27;Assign&#x27;, &#x27;AugAssign&#x27;, &#x27;FunctionDef&#x27;, &#x27;Recursion&#x27;])</span></span><br><span class="line"><span class="string">    True</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;YOUR_EXPRESSION_HERE&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>要求只能使用一行代码实现，并且实现当中不能使用赋值、函数定义和递归，也不能在return的语句当中调用<code>make_anonymous_factorial</code>函数。<br>拿到这样的题目，第一反应估计都是蒙圈，但冷静下来，其实是可以找到思路的。首先我们要做的是找到问题，我们现在不知道怎么实现，其实并不是遇到了实际的问题，最大的问题就是没有遇到实际问题本身。所以我们要先分析问题，找到其中的问题。<br>可以明确的是，根据样例，我们需要返回一个函数，那么我们肯定需要使用<code>lambda</code>关键字定义一个匿名函数进行返回。<br>我们可以试着写一下匿名函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">lambda</span> x: <span class="number">1</span> <span class="keyword">if</span> x == <span class="number">1</span> <span class="keyword">else</span> mul(x, fact(x-<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>写一下就发现问题了，这里的<code>fact</code>函数并没有定义，并且这个没有定义的函数其实就是我们写的匿名函数本身。也就是说我们要在匿名函数里实现递归，让它能调用自己。<br>但题目当中限制了，我们不能使用赋值语句给它命名，我们不可能在不知道函数名字的情况下调用函数。所以到这里，难点才真正浮现出来。<br>其实这个问题是可以解决的，怎么解决呢？我们把<code>fact</code>函数作为参数传递进去，而不是直接通过名字获取：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (<span class="keyword">lambda</span> f: <span class="keyword">lambda</span> x: <span class="keyword">if</span> x == <span class="number">1</span> <span class="keyword">else</span> mul(x, f(x-<span class="number">1</span>)))(f)</span><br></pre></td></tr></table></figure>
+<p>但是这本质上只是把递归的过程转移到了函数f身上，我们还是要实现一个可以递归的匿名函数f才行。既然f本身是一个递归函数，那么上面的代码其实也可以写成这样：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (<span class="keyword">lambda</span> f: <span class="keyword">lambda</span> x: f(x))(f)</span><br></pre></td></tr></table></figure>
+<p>在上面的设想当中，f只有递归的逻辑，但实际上不是，f还需要知道x的取值，这样才能判断递归什么时候结束。所以x也必须要传入f当中，但这依然解决不了无法递归的问题。<br>这个问题才是本题的核心难点，解决它的关键就藏在题目给的样例里：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fact = <span class="keyword">lambda</span> n: <span class="number">1</span> <span class="keyword">if</span> n == <span class="number">1</span> <span class="keyword">else</span> mul(n, fact(sub(n, <span class="number">1</span>)))</span><br></pre></td></tr></table></figure>
+<p>我们仔细看一下这行代码，就会发现这行代码本身就是非常混乱的。如果Python解析器是先执行完右侧的函数再来赋值给左边，那么右边的匿名函数在执行的时候，<code>fact</code>变量其实还没有绑定，而要绑定<code>fact</code>，就需要先执行完<code>lambda</code>语句，这样就构成了一个死循环。<br>所以我猜测，可能Python解释器虽然是先执行完右侧的语句再绑定，但在执行右侧之前，左侧的变量就已经先创建好了。并且在执行<code>lambda</code>的时候并不会执行严格的检查，只有这样，才不会陷入死循环。<br>这个<code>fact</code>其实是既作为参数又作为结果，我们就要利用这一点来解决问题，我们让我们的f也一样既是一个参数也是一个结果。<br>我们给f函数增加一个参数<code>f</code>，接收一个传入的函数，有了传入的函数就可以递归调用了，虽然这个函数就是它本身：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (<span class="keyword">lambda</span> f: <span class="keyword">lambda</span> x: f(f, x))(<span class="keyword">lambda</span> f, x: <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> x == <span class="number">1</span> <span class="keyword">else</span> mul(x, f(f, x-<span class="number">1</span>)))</span><br></pre></td></tr></table></figure>
+<p>虽然只是Python基础语法的运用，但这里面绕了好几道弯，想要做出来，真不是一件容易的事情。<br>不禁让我感慨一句，真不愧是伯克利啊……</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/hello-world/" class="archive-article-date">
-  	<time datetime="2023-05-04T15:00:43.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/04/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Homework%203/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Numpy/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/2-2%20Recursion/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Q1-Compose"><span class="toc-number">1.</span> <span class="toc-text">Q1: Compose</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q2-G-function"><span class="toc-number">2.</span> <span class="toc-text">Q2: G function</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q3-Missing-Digits"><span class="toc-number">3.</span> <span class="toc-text">Q3: Missing Digits</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q4-Count-change"><span class="toc-number">4.</span> <span class="toc-text">Q4: Count change</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q5-Towers-of-Hanoi"><span class="toc-number">5.</span> <span class="toc-text">Q5: Towers of Hanoi</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q6-Anonymous-factorial"><span class="toc-number">6.</span> <span class="toc-text">Q6: Anonymous factorial</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab03/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab04/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab02/" class="archive-article-date">
-  	<time datetime="2023-05-04T14:08:45.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="page-number" href="/archives/2023/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -404,8 +334,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

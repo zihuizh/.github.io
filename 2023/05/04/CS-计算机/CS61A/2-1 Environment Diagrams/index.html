@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,9 +26,9 @@
 <meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/2-1%20Environment%20Diagrams/index.html">
 <meta property="og:site_name" content="秋水时至">
 <meta property="og:description" content="Multiple Environments Every expression is evaluated in the context of an environment. [!quote]A name evaluates to the value bound to that name in the earliest frame of the current environment in which">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale">
 <meta property="article:published_time" content="2023-05-04T15:32:59.904Z">
-<meta property="article:modified_time" content="2023-05-04T15:36:10.457Z">
+<meta property="article:modified_time" content="2023-05-05T08:46:59.997Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
 
@@ -41,7 +41,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-cn'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -117,6 +117,16 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -149,7 +159,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/2-1%20Environment%20Diagrams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-05-04 23:32:59 / Modified: 23:36:10" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
+              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-05 16:46:59" itemprop="dateModified" datetime="2023-05-05T16:46:59+08:00">2023-05-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -207,7 +223,7 @@
 </blockquote>
 </li>
 <li>Example 1<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">square</span>):</span><br><span class="line">    <span class="keyword">return</span> square * square</span><br></pre></td></tr></table></figure>
-这个函数没有任何错误，在不同结构(frame)中能够找到square的对应（函数还是参数值），这两个含义不冲突，在global下是函数，在f下是参数值。</li>
+这个函数没有任何错误，在不同结构(frame)中能够找到square的对应（函数还是参数值），这两个含义不冲突，在global下是函数，在f下是参数值。<span id="more"></span></li>
 </ul>
 <h1 id="Environments-for-Higher-Order-Functions"><a href="#Environments-for-Higher-Order-Functions" class="headerlink" title="Environments for Higher-Order Functions"></a>Environments for Higher-Order Functions</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_twice</span>(<span class="params">f, x</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return f(f(x))</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; apply_twice(square, 2)</span></span><br><span class="line"><span class="string">    16</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; from math import sqr</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; apply_twice(sqrt, 16)</span></span><br><span class="line"><span class="string">    2.0</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> f(f(x))</span><br></pre></td></tr></table></figure>
 <h1 id="Environment-for-Nested-Definitions"><a href="#Environment-for-Nested-Definitions" class="headerlink" title="Environment for Nested Definitions"></a>Environment for Nested Definitions</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">make_adder</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return a function that takes one argument k and returns k + n.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three = make_adder(3)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three(4)</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">adder</span>(<span class="params">k</span>):</span><br><span class="line">        <span class="keyword">return</span> k + n</span><br><span class="line">    <span class="keyword">return</span> adder</span><br></pre></td></tr></table></figure>
@@ -333,8 +349,10 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
 </div>
@@ -415,6 +433,8 @@
 
 
 
+
+  
 
   
 

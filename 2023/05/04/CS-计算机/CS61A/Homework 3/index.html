@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,9 +26,9 @@
 <meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Homework%203/index.html">
 <meta property="og:site_name" content="秋水时至">
 <meta property="og:description" content="HW3-WebHW3-File后两题难度很大 Q1: Compose12345678910111213141516171819202122def composer(func&#x3D;lambda x: x):    &quot;&quot;&quot;    Returns two functions -    one holding the composed function so far, and a">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale">
 <meta property="article:published_time" content="2023-05-04T15:32:59.914Z">
-<meta property="article:modified_time" content="2023-05-04T15:36:08.904Z">
+<meta property="article:modified_time" content="2023-05-05T08:47:01.658Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
 
@@ -41,7 +41,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-cn'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -117,6 +117,16 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -149,7 +159,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Homework%203/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-05-04 23:32:59 / Modified: 23:36:08" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
+              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-05 16:47:01" itemprop="dateModified" datetime="2023-05-05T16:47:01+08:00">2023-05-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -204,6 +220,7 @@
         <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/hw/hw03/">HW3-Web</a><br><a href="E:\Code\CS61A\lab\hw03">HW3-File</a><br>后两题难度很大</p>
 <h1 id="Q1-Compose"><a href="#Q1-Compose" class="headerlink" title="Q1: Compose"></a>Q1: Compose</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">composer</span>(<span class="params">func=<span class="keyword">lambda</span> x: x</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Returns two functions -</span></span><br><span class="line"><span class="string">    one holding the composed function so far, and another</span></span><br><span class="line"><span class="string">    that can create further composed problems.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_one = lambda x: x + 1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; mul_two = lambda x: x * 2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f, func_adder = composer()</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f1, func_adder = func_adder(add_one)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f1(3)</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f2, func_adder = func_adder(mul_two)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f2(3) # should be 1 + (2*3) = 7</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f3, func_adder = func_adder(add_one)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; f3(3) # should be 1 + (2 * (3 + 1)) = 9</span></span><br><span class="line"><span class="string">    9</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">func_adder</span>(<span class="params">g</span>):</span><br><span class="line">        <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">        <span class="keyword">return</span> composer(<span class="keyword">lambda</span> x: func(g(x)))</span><br><span class="line">    <span class="keyword">return</span> func, func_adder</span><br></pre></td></tr></table></figure>
 <p>func_adder要再返回func_adder和f，其实就是里面装了个composer</p>
+<span id="more"></span>
 <h1 id="Q2-G-function"><a href="#Q2-G-function" class="headerlink" title="Q2: G function"></a>Q2: G function</h1><p>比较简单</p>
 <h1 id="Q3-Missing-Digits"><a href="#Q3-Missing-Digits" class="headerlink" title="Q3: Missing Digits"></a>Q3: Missing Digits</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">missing_digits</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Given a number a that is in sorted, increasing order,</span></span><br><span class="line"><span class="string">    return the number of missing digits in n. A missing digit is</span></span><br><span class="line"><span class="string">    a number between the first and last digit of a that is not in n.</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(1248) # 3, 5, 6, 7</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(1122) # No missing numbers</span></span><br><span class="line"><span class="string">    0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(123456) # No missing numbers</span></span><br><span class="line"><span class="string">    0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(3558) # 4, 6, 7</span></span><br><span class="line"><span class="string">    3</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(35578) # 4, 6</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(12456) # 3</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(16789) # 2, 3, 4, 5</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; missing_digits(19) # 2, 3, 4, 5, 6, 7, 8</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">if</span>(n//<span class="number">10</span> == <span class="number">0</span>): </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    k = n%<span class="number">10</span> - (n//<span class="number">10</span>)%<span class="number">10</span> - <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span>(k &lt; <span class="number">0</span>): </span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> missing_digits(n//<span class="number">10</span>) + k</span><br></pre></td></tr></table></figure>
 <p>递归的是函数的表达式</p>
@@ -327,8 +344,10 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
 </div>
@@ -409,6 +428,8 @@
 
 
 
+
+  
 
   
 

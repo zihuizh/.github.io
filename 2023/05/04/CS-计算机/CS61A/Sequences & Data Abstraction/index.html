@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"zihuizh.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Youtube Lists123456789&gt;&gt;&gt; odds &#x3D; [41, 43, 47, 49]&gt;&gt;&gt; len(odds)4&gt;&gt;&gt; odds[1]43&gt;&gt;&gt; odds[0] - odds[3] + len(odds)-4&gt;&gt;&gt; odds[odds[3]-odds[2]]47 列表的定义 Containers">
+  <meta name="description" content="Youtube Lists123456789&gt;&gt;&gt; odds &#x3D; [41, 43, 47, 49]&gt;&gt;&gt; len(odds)4&gt;&gt;&gt; odds[1]43&gt;&gt;&gt; odds[0] - odds[3] + len(odds)-4&gt;&gt;&gt; odds[odds[3]-odds[2]]47">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sequences &amp; Data Abstraction">
 <meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/index.html">
 <meta property="og:site_name" content="秋水时至">
-<meta property="og:description" content="Youtube Lists123456789&gt;&gt;&gt; odds &#x3D; [41, 43, 47, 49]&gt;&gt;&gt; len(odds)4&gt;&gt;&gt; odds[1]43&gt;&gt;&gt; odds[0] - odds[3] + len(odds)-4&gt;&gt;&gt; odds[odds[3]-odds[2]]47 列表的定义 Containers">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:description" content="Youtube Lists123456789&gt;&gt;&gt; odds &#x3D; [41, 43, 47, 49]&gt;&gt;&gt; len(odds)4&gt;&gt;&gt; odds[1]43&gt;&gt;&gt; odds[0] - odds[3] + len(odds)-4&gt;&gt;&gt; odds[odds[3]-odds[2]]47">
+<meta property="og:locale">
 <meta property="article:published_time" content="2023-05-04T15:32:59.974Z">
-<meta property="article:modified_time" content="2023-05-04T15:36:04.463Z">
+<meta property="article:modified_time" content="2023-05-05T08:45:00.262Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
 
@@ -41,7 +41,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-cn'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -117,6 +117,16 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -149,7 +159,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Sequences%20&%20Data%20Abstraction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-05-04 23:32:59 / Modified: 23:36:04" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
+              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-05 16:45:00" itemprop="dateModified" datetime="2023-05-05T16:45:00+08:00">2023-05-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -203,6 +219,7 @@
       
         <p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=-Q45UcQ2XJk&list=PLx38hZJ5RLZe0LxEMID8Dus5avnH05-29&index=1&t=1s">Youtube</a></p>
 <h1 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>odds = [<span class="number">41</span>, <span class="number">43</span>, <span class="number">47</span>, <span class="number">49</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(odds)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>odds[<span class="number">1</span>]</span><br><span class="line"><span class="number">43</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>odds[<span class="number">0</span>] - odds[<span class="number">3</span>] + <span class="built_in">len</span>(odds)</span><br><span class="line">-<span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>odds[odds[<span class="number">3</span>]-odds[<span class="number">2</span>]]</span><br><span class="line"><span class="number">47</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 <p>列表的定义</p>
 <h1 id="Containers"><a href="#Containers" class="headerlink" title="Containers"></a>Containers</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>digits = [<span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">8</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> <span class="keyword">in</span> digits</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;1&#x27;</span> <span class="keyword">in</span> digits</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>, <span class="number">8</span>] <span class="keyword">in</span> digits</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>, <span class="number">2</span>] <span class="keyword">in</span> [[<span class="number">1</span>, <span class="number">2</span>], <span class="number">3</span>]</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
 <p>检查列表是否包含元素</p>
@@ -330,8 +347,10 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
 </div>
@@ -412,6 +431,8 @@
 
 
 
+
+  
 
   
 

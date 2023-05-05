@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,9 +26,9 @@
 <meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/index.html">
 <meta property="og:site_name" content="秋水时至">
 <meta property="og:description" content="Lab05-WebLab05-File TopicsList Comprehensions1[&lt;expression&gt; for &lt;element&gt; in &lt;sequence&gt; if &lt;conditional&gt;] Example: 12&gt;&gt;&gt; [i**2 for i in [1, 2, 3, 4] if i % 2 &#x3D;&#x3D; 0][4,">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale">
 <meta property="article:published_time" content="2023-05-04T15:32:59.974Z">
-<meta property="article:modified_time" content="2023-05-04T15:36:05.432Z">
+<meta property="article:modified_time" content="2023-05-05T08:47:04.863Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
 
@@ -41,7 +41,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-cn'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -117,6 +117,16 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -149,7 +159,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-05-04 23:32:59 / Modified: 23:36:05" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
+              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-05 16:47:04" itemprop="dateModified" datetime="2023-05-05T16:47:04+08:00">2023-05-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -205,6 +221,7 @@
 <h1 id="Topics"><a href="#Topics" class="headerlink" title="Topics"></a>Topics</h1><h2 id="List-Comprehensions"><a href="#List-Comprehensions" class="headerlink" title="List Comprehensions"></a>List Comprehensions</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&lt;expression&gt; <span class="keyword">for</span> &lt;element&gt; <span class="keyword">in</span> &lt;sequence&gt; <span class="keyword">if</span> &lt;conditional&gt;]</span><br></pre></td></tr></table></figure>
 <p>Example:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>]</span><br><span class="line">[<span class="number">4</span>, <span class="number">16</span>]</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 <h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><p>Our <code>tree</code> abstract data type consists of a root and a list of its <code>branches</code>. To create a tree and access its root value and branches, use the following constructor and selectors:</p>
 <ul>
 <li>Constructor<ul>
@@ -337,8 +354,10 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
 </div>
@@ -419,6 +438,8 @@
 
 
 
+
+  
 
   
 

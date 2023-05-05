@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,9 +26,9 @@
 <meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-4%20Higher-Order%20Functions/index.html">
 <meta property="og:site_name" content="秋水时至">
 <meta property="og:description" content="VideoHigher-Order Functions Higher-Order Function例子——计算图形面积：   Shape square circle hexagon    Area $r^2$ $\pi r^2$ $\frac{3\sqrt3}{2} r^2$   可以看出，面积和边长（半径）都有着一定关系，那么我们可以使用统一的area函数来计算。      12345from">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale">
 <meta property="article:published_time" content="2023-05-04T15:32:59.784Z">
-<meta property="article:modified_time" content="2023-05-04T15:33:35.522Z">
+<meta property="article:modified_time" content="2023-05-05T08:46:59.058Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
 
@@ -41,7 +41,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-cn'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -117,6 +117,16 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -149,7 +159,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-4%20Higher-Order%20Functions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-05-04 23:32:59 / Modified: 23:33:35" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
+              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-05 16:46:59" itemprop="dateModified" datetime="2023-05-05T16:46:59+08:00">2023-05-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -226,6 +242,7 @@
 </tbody></table>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pi, sqrt</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">area</span>(<span class="params">r, shape_constant</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the area of a shape from length measurement R.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">assert</span> r &gt; <span class="number">0</span>, <span class="string">&#x27;A length must be positive&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> r * r * shape_constant</span><br></pre></td></tr></table></figure>
 <p>只需要确定shape_constant即可确定形状，计算式是通用的，常数项是可以变化的，只需要变更常数值即可。</p>
+<span id="more"></span>
 <h3 id="Functions-as-operand-操作对象"><a href="#Functions-as-operand-操作对象" class="headerlink" title="Functions as operand(操作对象)"></a>Functions as operand(操作对象)</h3><p>函数中所通用的部分（如上例所示）可以是更加复杂的算式：$\sum_{i&#x3D;1}^{n}f(i)$。<br>其中求和是通用的，$f(i)$则是可以变化的部分，也就是函数也可以作为参数输入进另一个函数中。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">identity</span>(<span class="params">k</span>):</span><br><span class="line">    <span class="keyword">return</span> k</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cube</span>(<span class="params">k</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">pow</span>(k, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">summation</span>(<span class="params">n, term</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Sum the first N terms of a sequence.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; summation(5, cube)</span></span><br><span class="line"><span class="string">    225</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    total, k = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k &lt;= n:</span><br><span class="line">        total, k = total + term(k), k + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
 <p>在此例当中，identity()与cube()就作为$f(i)$这一参数输入进summation(n,term)中。term就是相加的每一项，summation则用来实现加和。</p>
@@ -343,8 +360,10 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
 </div>
@@ -425,6 +444,8 @@
 
 
 
+
+  
 
   
 

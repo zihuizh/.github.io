@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,9 +26,9 @@
 <meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-2%20Functions/index.html">
 <meta property="og:site_name" content="秋水时至">
 <meta property="og:description" content="Video 2CS61A Summer 2020 Lecture 2: Functions  Names,Assignment,and User-Defined Functions 123456789101112# Function valuesmaxmax(3, 4)f &#x3D; maxff(3, 4)max &#x3D; 7f(3, 4)f(3, max)f &#x3D; 2# f(3, 4)__builtins__.">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale">
 <meta property="article:published_time" content="2023-05-04T15:32:59.784Z">
-<meta property="article:modified_time" content="2023-05-04T15:33:35.522Z">
+<meta property="article:modified_time" content="2023-05-05T08:46:56.896Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
 
@@ -41,7 +41,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-cn'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -117,6 +117,16 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -149,7 +159,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-2%20Functions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-05-04 23:32:59 / Modified: 23:33:35" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
+              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-05 16:46:56" itemprop="dateModified" datetime="2023-05-05T16:46:56+08:00">2023-05-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -206,7 +222,7 @@
 <li><p>Names,Assignment,and User-Defined Functions</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Function values</span></span><br><span class="line"><span class="built_in">max</span></span><br><span class="line"><span class="built_in">max</span>(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">f = <span class="built_in">max</span></span><br><span class="line">f</span><br><span class="line">f(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="built_in">max</span> = <span class="number">7</span></span><br><span class="line">f(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">f(<span class="number">3</span>, <span class="built_in">max</span>)</span><br><span class="line">f = <span class="number">2</span></span><br><span class="line"><span class="comment"># f(3, 4)</span></span><br><span class="line">__builtins__.<span class="built_in">max</span></span><br></pre></td></tr></table></figure>
 <p>可以使用多个名称表示同一个函数（f&amp;max)。<br>名称可以被重新定义为其他值（max&#x3D;7）。<br>也就是函数本身也是一个对象，可以被赋值或者赋给其它变量。<br>使用def来定义函数。</p>
-</li>
+<span id="more"></span></li>
 <li><p>Environment Diagrams （Evaluation Rule for assignment suite）<br>可以查看程序的具体执行情况。<br><strong>赋值的顺序是先从等号右边开始，从左到右运算；运算完成后，再进行赋值</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line">b,a=a+b,b</span><br></pre></td></tr></table></figure>
 <p>执行结果是什么？并不是b&#x3D;3、a&#x3D;3，而是b&#x3D;3、a&#x3D;2，也就是说并不是把第三行分成b&#x3D;a+b、a&#x3D;b两条语句先后执行，而是先计算a+b、b，再进行赋值。</p>
@@ -322,8 +338,10 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
 </div>
@@ -404,6 +422,8 @@
 
 
 
+
+  
 
   
 

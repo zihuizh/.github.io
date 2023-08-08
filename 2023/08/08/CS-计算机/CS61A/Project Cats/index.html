@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zihuizh.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Cats WebCats Fille Phase 1 TypingProblem 1简单的选取，没什么问题1234567891011121314def choose(paragraphs, select, k):    &quot;&quot;&quot;Return the Kth paragraph from PARAGRAPHS for which SELECT called on the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Project Cats">
+<meta property="og:url" content="https://zihuizh.github.io/2023/08/08/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Project%20Cats/index.html">
+<meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="Cats WebCats Fille Phase 1 TypingProblem 1简单的选取，没什么问题1234567891011121314def choose(paragraphs, select, k):    &quot;&quot;&quot;Return the Kth paragraph from PARAGRAPHS for which SELECT called on the">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-08-08T08:55:27.100Z">
+<meta property="article:modified_time" content="2023-08-08T08:56:44.778Z">
+<meta property="article:author" content="zihuizh">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://zihuizh.github.io/2023/08/08/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Project%20Cats/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Project Cats | 秋水时至</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">秋水时至</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/08/08/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Project%20Cats/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ICON.png">
+      <meta itemprop="name" content="zihuizh">
+      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋水时至">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Project Cats
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-08-08 16:55:27 / Modified: 16:56:44" itemprop="dateCreated datePublished" datetime="2023-08-08T16:55:27+08:00">2023-08-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/proj/cats/">Cats Web</a><br><a href="file:///E:\Code\CS61A\lab\cats">Cats Fille</a></p>
+<h1 id="Phase-1-Typing"><a href="#Phase-1-Typing" class="headerlink" title="Phase 1 Typing"></a>Phase 1 Typing</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem 1"></a>Problem 1</h2><p>简单的选取，没什么问题<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">choose</span>(<span class="params">paragraphs, select, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the Kth paragraph from PARAGRAPHS for which SELECT called on the</span></span><br><span class="line"><span class="string">    paragraph returns true. If there are fewer than K such paragraphs, return</span></span><br><span class="line"><span class="string">    the empty string.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 1</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> paragraph <span class="keyword">in</span> paragraphs:</span><br><span class="line">        <span class="keyword">if</span> select(paragraph):</span><br><span class="line">            <span class="keyword">if</span>(i == k):</span><br><span class="line">                <span class="keyword">return</span> paragraph</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure><br><span id="more"></span></p>
+<h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="Problem 2"></a>Problem 2</h2><p>对两个列表进行检查，是否有交集<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">about</span>(<span class="params">topic</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return a select function that returns whether a paragraph contains one</span></span><br><span class="line"><span class="string">    of the words in TOPIC.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; about_dogs = about([&#x27;dog&#x27;, &#x27;dogs&#x27;, &#x27;pup&#x27;, &#x27;puppy&#x27;])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; choose([&#x27;Cute Dog!&#x27;, &#x27;That is a cat.&#x27;, &#x27;Nice pup!&#x27;], about_dogs, 0)</span></span><br><span class="line"><span class="string">    &#x27;Cute Dog!&#x27;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; choose([&#x27;Cute Dog!&#x27;, &#x27;That is a cat.&#x27;, &#x27;Nice pup.&#x27;], about_dogs, 1)</span></span><br><span class="line"><span class="string">    &#x27;Nice pup.&#x27;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">all</span>([lower(x) == x <span class="keyword">for</span> x <span class="keyword">in</span> topic]), <span class="string">&#x27;topics should be lowercase.&#x27;</span></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 2</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">select</span>(<span class="params">paragraph: <span class="built_in">str</span></span>):</span><br><span class="line">        remove_chars = <span class="string">&quot;!\&quot;#$%&amp;\&#x27;()*+,-./:;&lt;=&gt;?@[\\]^_`&#123;|&#125;~&quot;</span></span><br><span class="line">        <span class="keyword">for</span> char <span class="keyword">in</span> remove_chars:</span><br><span class="line">            paragraph = paragraph.replace(char,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        paralist = split(paragraph)</span><br><span class="line">        paralist = [lower(word) <span class="keyword">for</span> word <span class="keyword">in</span> paralist]</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> topic:</span><br><span class="line">            <span class="keyword">if</span> word <span class="keyword">in</span> paralist:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> select</span><br></pre></td></tr></table></figure></p>
+<h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="Problem 3"></a>Problem 3</h2><p>在输入的两段文本中找对应位置相同的比例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">accuracy</span>(<span class="params">typed, reference</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the accuracy (percentage of words typed correctly) of TYPED</span></span><br><span class="line"><span class="string">    when compared to the prefix of REFERENCE that was typed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accuracy(&#x27;Cute Dog!&#x27;, &#x27;Cute Dog.&#x27;)</span></span><br><span class="line"><span class="string">    50.0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accuracy(&#x27;A Cute Dog!&#x27;, &#x27;Cute Dog.&#x27;)</span></span><br><span class="line"><span class="string">    0.0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accuracy(&#x27;cute Dog.&#x27;, &#x27;Cute Dog.&#x27;)</span></span><br><span class="line"><span class="string">    50.0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accuracy(&#x27;Cute Dog. I say!&#x27;, &#x27;Cute Dog.&#x27;)</span></span><br><span class="line"><span class="string">    50.0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accuracy(&#x27;Cute&#x27;, &#x27;Cute Dog.&#x27;)</span></span><br><span class="line"><span class="string">    100.0</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; accuracy(&#x27;&#x27;, &#x27;Cute Dog.&#x27;)</span></span><br><span class="line"><span class="string">    0.0</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    typed_words = split(typed)</span><br><span class="line">    reference_words = split(reference)</span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 3</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    typed_words = [word.replace(<span class="string">&#x27;\t&#x27;</span>,<span class="string">&#x27;&#x27;</span>) <span class="keyword">for</span> word <span class="keyword">in</span> typed_words]</span><br><span class="line">    length = <span class="built_in">min</span>(<span class="built_in">len</span>(typed_words),<span class="built_in">len</span>(reference_words))</span><br><span class="line">    <span class="keyword">if</span> length == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> typed_words == reference_words:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">100.0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0.0</span></span><br><span class="line">    k = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(length):</span><br><span class="line">        <span class="keyword">if</span> reference_words[i] == typed_words[i]:</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> k*<span class="number">100</span>/<span class="built_in">len</span>(typed_words)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Problem-4"><a href="#Problem-4" class="headerlink" title="Problem 4"></a>Problem 4</h2><p>除法计算<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">wpm</span>(<span class="params">typed, elapsed</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return the words-per-minute (WPM) of the TYPED string.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">assert</span> elapsed &gt; <span class="number">0</span>, <span class="string">&#x27;Elapsed time must be positive&#x27;</span></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 4</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    chars = <span class="built_in">len</span>(typed)</span><br><span class="line">    <span class="keyword">return</span> chars/<span class="number">5</span>/elapsed*<span class="number">60</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Phase-2-Autocorrect"><a href="#Phase-2-Autocorrect" class="headerlink" title="Phase 2 Autocorrect"></a>Phase 2 Autocorrect</h1><h2 id="Problem-5"><a href="#Problem-5" class="headerlink" title="Problem 5"></a>Problem 5</h2><p>在列表上应用函数求值来找出对应函数值最小项<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">autocorrect</span>(<span class="params">user_word, valid_words, diff_function, limit</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Returns the element of VALID_WORDS that has the smallest difference</span></span><br><span class="line"><span class="string">    from USER_WORD. Instead returns USER_WORD if that difference is greater</span></span><br><span class="line"><span class="string">    than LIMIT.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 5</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">if</span> user_word <span class="keyword">in</span> valid_words:</span><br><span class="line">        <span class="keyword">return</span> user_word</span><br><span class="line">    diff = []</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> valid_words:</span><br><span class="line">        diff.append(diff_function(user_word,word,limit))</span><br><span class="line">    mindiff = <span class="built_in">min</span>(diff)</span><br><span class="line">    <span class="keyword">if</span> mindiff &lt;= limit:</span><br><span class="line">        <span class="keyword">return</span> valid_words[diff.index(mindiff)]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> user_word</span><br></pre></td></tr></table></figure></p>
+<h2 id="Problem-6"><a href="#Problem-6" class="headerlink" title="Problem 6"></a>Problem 6</h2><p>需要应用递归方法计算文本替换个数，对文本第一个字符进行判断再传入文本后面字符再递归。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">shifty_shifts</span>(<span class="params">start, goal, limit</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;A diff function for autocorrect that determines how many letters</span></span><br><span class="line"><span class="string">    in START need to be substituted to create GOAL, then adds the difference in their lengths.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 6</span></span><br><span class="line">    <span class="keyword">if</span> start == <span class="string">&#x27;&#x27;</span> <span class="keyword">or</span> goal == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">        lendiff = <span class="built_in">abs</span>(<span class="built_in">len</span>(start) + <span class="built_in">len</span>(goal))</span><br><span class="line">        <span class="keyword">if</span> lendiff &gt; limit:</span><br><span class="line">            <span class="keyword">return</span> limit + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> lendiff</span><br><span class="line">    <span class="keyword">if</span> start[<span class="number">0</span>] == goal[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> shifty_shifts(start[<span class="number">1</span>:],goal[<span class="number">1</span>:],limit)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> limit &gt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> shifty_shifts(start[<span class="number">1</span>:],goal[<span class="number">1</span>:],limit-<span class="number">1</span>) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> limit + <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Problem-7"><a href="#Problem-7" class="headerlink" title="Problem 7"></a>Problem 7</h2><p>还是递归，在递归前需要对进行增加、删除还是替换操作进行判断，之前尝试使用diff函数对不同操作后进行评分，但发现不成功。追本溯源，还是直接用递归直接对三种方法进行完全计算。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">meowstake_matches</span>(<span class="params">start, goal, limit</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;A diff function that computes the edit distance from START to GOAL.&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> limit &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> start == <span class="string">&#x27;&#x27;</span> <span class="keyword">or</span> goal == <span class="string">&#x27;&#x27;</span>: <span class="comment"># Fill in the condition</span></span><br><span class="line">        <span class="comment"># BEGIN</span></span><br><span class="line">        <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">        lendiff = <span class="built_in">abs</span>(<span class="built_in">len</span>(start) + <span class="built_in">len</span>(goal))</span><br><span class="line">        <span class="keyword">if</span> lendiff &gt; limit:</span><br><span class="line">            <span class="keyword">return</span> limit + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> lendiff</span><br><span class="line"></span><br><span class="line">    <span class="keyword">elif</span> start[<span class="number">0</span>] == goal[<span class="number">0</span>]: <span class="comment"># Feel free to remove or add additional cases</span></span><br><span class="line">        <span class="comment"># BEGIN</span></span><br><span class="line">        <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">        <span class="keyword">return</span> meowstake_matches(start[<span class="number">1</span>:],goal[<span class="number">1</span>:],limit)</span><br><span class="line">        <span class="comment"># END</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        add_diff = meowstake_matches(goal[<span class="number">0</span>] + start,goal,limit-<span class="number">1</span>)  <span class="comment"># Fill in these lines</span></span><br><span class="line">        remove_diff = meowstake_matches(start[<span class="number">1</span>:],goal,limit-<span class="number">1</span>)</span><br><span class="line">        substitute_diff = meowstake_matches(start.replace(start[<span class="number">0</span>],goal[<span class="number">0</span>],<span class="number">1</span>),goal,limit-<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># print(&#x27;DE<span class="doctag">BUG:</span> &#x27;,add_diff,remove_diff,substitute_diff)</span></span><br><span class="line">        <span class="comment"># BEGIN</span></span><br><span class="line">        <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(add_diff,remove_diff,substitute_diff) + <span class="number">1</span> <span class="comment"># type: ignore</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Phase-3-Multiplayer"><a href="#Phase-3-Multiplayer" class="headerlink" title="Phase 3 Multiplayer"></a>Phase 3 Multiplayer</h1><h2 id="Problem-8"><a href="#Problem-8" class="headerlink" title="Problem 8"></a>Problem 8</h2><p>还是列表对比，输出字典。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">report_progress</span>(<span class="params">typed, prompt, <span class="built_in">id</span>, send</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Send a report of your id and progress so far to the multiplayer server.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 8</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    progress = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(typed)):</span><br><span class="line">        <span class="keyword">if</span> typed[i] == prompt[i]:</span><br><span class="line">            progress = (i+<span class="number">1</span>)/<span class="built_in">len</span>(prompt)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    report = &#123;<span class="string">&#x27;id&#x27;</span>:<span class="built_in">id</span>,<span class="string">&#x27;progress&#x27;</span>:progress&#125;</span><br><span class="line">    send(report)</span><br><span class="line">    <span class="keyword">return</span> progress</span><br></pre></td></tr></table></figure></p>
+<h2 id="Problem-9"><a href="#Problem-9" class="headerlink" title="Problem 9"></a>Problem 9</h2><p>列表前后项相减<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">time_per_word</span>(<span class="params">times_per_player, words</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Given timing data, return a game data abstraction, which contains a list</span></span><br><span class="line"><span class="string">    of words and the amount of time each player took to type each word.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Arguments:</span></span><br><span class="line"><span class="string">        times_per_player: A list of lists of timestamps including the time</span></span><br><span class="line"><span class="string">                          the player started typing, followed by the time</span></span><br><span class="line"><span class="string">                          the player finished typing each word.</span></span><br><span class="line"><span class="string">        words: a list of words, in the order they are typed.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 9</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    time = []</span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> times_per_player:</span><br><span class="line">        time_list = [t[i+<span class="number">1</span>]-t[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(t)-<span class="number">1</span>)]</span><br><span class="line">        time.append(time_list)</span><br><span class="line">    <span class="keyword">return</span> game(words,time)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Problem-10"><a href="#Problem-10" class="headerlink" title="Problem 10"></a>Problem 10</h2><p>还是列表对比，包括抽取建立新表、以及二维表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fastest_words</span>(<span class="params">game</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return a list of lists of which words each player typed fastest.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Arguments:</span></span><br><span class="line"><span class="string">        game: a game data abstraction as returned by time_per_word.</span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        a list of lists containing which words each player typed fastest</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    players = <span class="built_in">range</span>(<span class="built_in">len</span>(all_times(game)))  <span class="comment"># An index for each player</span></span><br><span class="line">    words = <span class="built_in">range</span>(<span class="built_in">len</span>(all_words(game)))    <span class="comment"># An index for each word</span></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM 10</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    fastlist = []</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> players:</span><br><span class="line">        fastlist.append([])</span><br><span class="line">    <span class="keyword">for</span> word_index <span class="keyword">in</span> words:</span><br><span class="line">        timelist = [all_times(game)[p][word_index] <span class="keyword">for</span> p <span class="keyword">in</span> players]</span><br><span class="line">        playerindex = timelist.index(<span class="built_in">min</span>(timelist))</span><br><span class="line">        fastlist[playerindex].append(all_words(game)[word_index])</span><br><span class="line">    <span class="keyword">return</span> fastlist</span><br></pre></td></tr></table></figure></p>
+<h1 id="Extra-Credit"><a href="#Extra-Credit" class="headerlink" title="Extra Credit"></a>Extra Credit</h1><h2 id="EC1"><a href="#EC1" class="headerlink" title="EC1"></a>EC1</h2><p>和<code>meowstake_matches</code>类似，直接加上<code>key_distance[start[0],goal[0]]</code>就可以<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">key_distance = get_key_distances()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">key_distance_diff</span>(<span class="params">start, goal, limit</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot; A diff function that takes into account the distances between keys when</span></span><br><span class="line"><span class="string">    computing the difference score.&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    start = start.lower() <span class="comment">#converts the string to lowercase</span></span><br><span class="line">    goal = goal.lower() <span class="comment">#converts the string to lowercase</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># BEGIN PROBLEM EC1</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    <span class="keyword">if</span> limit &lt; <span class="number">0</span>: <span class="keyword">return</span> <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> start == <span class="string">&#x27;&#x27;</span> <span class="keyword">or</span> goal == <span class="string">&#x27;&#x27;</span>: </span><br><span class="line">        lendiff = <span class="built_in">abs</span>(<span class="built_in">len</span>(start) + <span class="built_in">len</span>(goal))</span><br><span class="line">        <span class="keyword">if</span> lendiff &gt; limit: <span class="keyword">return</span> <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> lendiff</span><br><span class="line">    <span class="keyword">elif</span> start[<span class="number">0</span>] == goal[<span class="number">0</span>]: </span><br><span class="line">        <span class="keyword">return</span> key_distance_diff(start[<span class="number">1</span>:],goal[<span class="number">1</span>:],limit)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        add_diff = key_distance_diff(goal[<span class="number">0</span>] + start,goal,limit-<span class="number">1</span>) + <span class="number">1</span>  <span class="comment"># Fill in these lines</span></span><br><span class="line">        remove_diff = key_distance_diff(start[<span class="number">1</span>:],goal,limit-<span class="number">1</span>) + <span class="number">1</span></span><br><span class="line">        kd = key_distance[start[<span class="number">0</span>],goal[<span class="number">0</span>]]</span><br><span class="line">        substitute_diff = key_distance_diff(start.replace(start[<span class="number">0</span>],goal[<span class="number">0</span>],<span class="number">1</span>),goal,limit-kd) + kd</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(add_diff,remove_diff,substitute_diff)</span><br><span class="line">    <span class="comment"># END PROBLEM EC1</span></span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/07/26/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Homework%204%20Data%20Abstraction%20Trees/" rel="prev" title="Homework 4 Data Abstraction Trees">
+      <i class="fa fa-chevron-left"></i> Homework 4 Data Abstraction Trees
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Phase-1-Typing"><span class="nav-number">1.</span> <span class="nav-text">Phase 1 Typing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-1"><span class="nav-number">1.1.</span> <span class="nav-text">Problem 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-2"><span class="nav-number">1.2.</span> <span class="nav-text">Problem 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-3"><span class="nav-number">1.3.</span> <span class="nav-text">Problem 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-4"><span class="nav-number">1.4.</span> <span class="nav-text">Problem 4</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Phase-2-Autocorrect"><span class="nav-number">2.</span> <span class="nav-text">Phase 2 Autocorrect</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-5"><span class="nav-number">2.1.</span> <span class="nav-text">Problem 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-6"><span class="nav-number">2.2.</span> <span class="nav-text">Problem 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-7"><span class="nav-number">2.3.</span> <span class="nav-text">Problem 7</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Phase-3-Multiplayer"><span class="nav-number">3.</span> <span class="nav-text">Phase 3 Multiplayer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-8"><span class="nav-number">3.1.</span> <span class="nav-text">Problem 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-9"><span class="nav-number">3.2.</span> <span class="nav-text">Problem 9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-10"><span class="nav-number">3.3.</span> <span class="nav-text">Problem 10</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Extra-Credit"><span class="nav-number">4.</span> <span class="nav-text">Extra Credit</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#EC1"><span class="nav-number">4.1.</span> <span class="nav-text">EC1</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zihuizh"
+      src="/images/ICON.png">
+  <p class="site-author-name" itemprop="name">zihuizh</p>
+  <div class="site-description" itemprop="description">吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zihuizh</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

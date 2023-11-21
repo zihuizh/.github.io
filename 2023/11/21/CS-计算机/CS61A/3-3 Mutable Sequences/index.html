@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"zihuizh.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Creation Time:  2023-03-24 16:10 正则表达式测试器learn-regex">
+  <meta name="description" content="Objects Objects represent information They consist of data and behavior, bundled together to create abstractions Objects can represent things, but also properties, interactions, &amp; processes A type">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式">
-<meta property="og:url" content="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="3-3 Mutable Sequences">
+<meta property="og:url" content="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/3-3%20Mutable%20Sequences/index.html">
 <meta property="og:site_name" content="秋水时至">
-<meta property="og:description" content="Creation Time:  2023-03-24 16:10 正则表达式测试器learn-regex">
+<meta property="og:description" content="Objects Objects represent information They consist of data and behavior, bundled together to create abstractions Objects can represent things, but also properties, interactions, &amp; processes A type">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-05-04T15:32:59.764Z">
-<meta property="article:modified_time" content="2023-05-04T15:33:35.512Z">
+<meta property="article:published_time" content="2023-11-21T09:26:01.263Z">
+<meta property="article:modified_time" content="2023-11-21T09:29:54.257Z">
 <meta property="article:author" content="zihuizh">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+<link rel="canonical" href="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/3-3%20Mutable%20Sequences/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>正则表达式 | 秋水时至</title>
+  <title>3-3 Mutable Sequences | 秋水时至</title>
   
 
 
@@ -165,7 +165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/3-3%20Mutable%20Sequences/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ICON.png">
@@ -178,7 +178,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          正则表达式
+          3-3 Mutable Sequences
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-05-04 23:32:59 / Modified: 23:33:35" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
+              <time title="Created: 2023-11-21 17:26:01 / Modified: 17:29:54" itemprop="dateCreated datePublished" datetime="2023-11-21T17:26:01+08:00">2023-11-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,6 +198,10 @@
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
                 </span>
             </span>
 
@@ -212,8 +216,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><code>Creation Time:  2023-03-24 16:10</code></p>
-<p><a target="_blank" rel="noopener" href="https://regex101.com/">正则表达式测试器</a><br><a target="_blank" rel="noopener" href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md">learn-regex</a></p>
+        <h1 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h1><ul>
+<li>Objects represent information</li>
+<li>They consist of data and behavior, bundled together to create abstractions</li>
+<li>Objects can represent things, but also properties, interactions, &amp; processes</li>
+<li>A type of object is called a class; classes are first-class values in Python</li>
+<li>Object-oriented programming:<ul>
+<li>A metaphor for organizing large programs</li>
+<li>Special syntax that can improve the composition of programs</li>
+</ul>
+</li>
+<li>In Python, every value is an object<ul>
+<li>All objects have attributes</li>
+<li>A lot of data manipulation happens through object methods</li>
+<li>Functions do one thing; objects do many related things<span id="more"></span>
+<h1 id="Mutation-Operations"><a href="#Mutation-Operations" class="headerlink" title="Mutation Operations"></a>Mutation Operations</h1></li>
+</ul>
+</li>
+<li>All names that refer to the same object are affected by a mutation</li>
+<li>Only objects of mutable types can change: lists &amp; dictionaries</li>
+<li>A function can change the value of any object in its scope</li>
+</ul>
+<h1 id="Tuples"><a href="#Tuples" class="headerlink" title="Tuples"></a>Tuples</h1><ul>
+<li>Immutable values are protected from mutation</li>
+</ul>
+<h1 id="Mutation"><a href="#Mutation" class="headerlink" title="Mutation"></a>Mutation</h1><h2 id="Sameness-and-Change"><a href="#Sameness-and-Change" class="headerlink" title="Sameness and Change"></a>Sameness and Change</h2><ul>
+<li>As long as we never modify objects, a compound object is just the totality of its pieces</li>
+<li>A rational number is just its numerator and denominator</li>
+<li>This view is no longer valid in the presence of change</li>
+<li>A compound data object has an “identity” in addition to the pieces of which it is composed</li>
+<li>A list is still “the same” list even if we change its contents</li>
+<li>Conversely, we could have two lists that happen to have the same contents, but are different<h2 id="Identity-Operators"><a href="#Identity-Operators" class="headerlink" title="Identity Operators"></a>Identity Operators</h2><code>&lt;exp0&gt; is &lt;exp1&gt;</code><br>evaluates to True if both <code>&lt;exp0&gt;</code> and <code>&lt;exp1&gt;</code> evaluate to the same object<br>Identical objects are always equal values<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = [<span class="number">1</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = a</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<h2 id="Mutable-Default-Arguments-are-Dangerous"><a href="#Mutable-Default-Arguments-are-Dangerous" class="headerlink" title="Mutable Default Arguments are Dangerous"></a>Mutable Default Arguments are Dangerous</h2>A default argument value is part of a function value, not generated by a call</li>
+</ul>
 
     </div>
 
@@ -229,13 +264,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Missing%20Semester/" rel="prev" title="Missing Semester">
-      <i class="fa fa-chevron-left"></i> Missing Semester
+    <a href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/4-1%20Mutable%20Functions/" rel="prev" title="4-1 Mutable Functions">
+      <i class="fa fa-chevron-left"></i> 4-1 Mutable Functions
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/1-1%20Intro/" rel="next" title="1-1 Intro">
-      1-1 Intro <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -294,6 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Objects"><span class="nav-number">1.</span> <span class="nav-text">Objects</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mutation-Operations"><span class="nav-number">2.</span> <span class="nav-text">Mutation Operations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tuples"><span class="nav-number">3.</span> <span class="nav-text">Tuples</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mutation"><span class="nav-number">4.</span> <span class="nav-text">Mutation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sameness-and-Change"><span class="nav-number">4.1.</span> <span class="nav-text">Sameness and Change</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Identity-Operators"><span class="nav-number">4.2.</span> <span class="nav-text">Identity Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mutable-Default-Arguments-are-Dangerous"><span class="nav-number">4.3.</span> <span class="nav-text">Mutable Default Arguments are Dangerous</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -162,6 +162,340 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/3-3%20Mutable%20Sequences/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ICON.png">
+      <meta itemprop="name" content="zihuizh">
+      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋水时至">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/3-3%20Mutable%20Sequences/" class="post-title-link" itemprop="url">3-3 Mutable Sequences</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-21 17:26:01 / Modified: 17:29:54" itemprop="dateCreated datePublished" datetime="2023-11-21T17:26:01+08:00">2023-11-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h1><ul>
+<li>Objects represent information</li>
+<li>They consist of data and behavior, bundled together to create abstractions</li>
+<li>Objects can represent things, but also properties, interactions, &amp; processes</li>
+<li>A type of object is called a class; classes are first-class values in Python</li>
+<li>Object-oriented programming:<ul>
+<li>A metaphor for organizing large programs</li>
+<li>Special syntax that can improve the composition of programs</li>
+</ul>
+</li>
+<li>In Python, every value is an object<ul>
+<li>All objects have attributes</li>
+<li>A lot of data manipulation happens through object methods</li>
+<li>Functions do one thing; objects do many related things
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/3-3%20Mutable%20Sequences/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/4-1%20Mutable%20Functions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ICON.png">
+      <meta itemprop="name" content="zihuizh">
+      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋水时至">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/4-1%20Mutable%20Functions/" class="post-title-link" itemprop="url">4-1 Mutable Functions</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-21 17:26:01 / Modified: 17:30:32" itemprop="dateCreated datePublished" datetime="2023-11-21T17:26:01+08:00">2023-11-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="A-Function-with-Behavior-That-Varies-Over-Time"><a href="#A-Function-with-Behavior-That-Varies-Over-Time" class="headerlink" title="A Function with Behavior That Varies Over Time"></a>A Function with Behavior That Varies Over Time</h1><ul>
+<li>The parent frame contains the balance, the local state of the withdraw function</li>
+<li>All calls to the same function have the same parent</li>
+<li>Every call decreases the same balance by (a possibly different) amount
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/4-1%20Mutable%20Functions/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ICON.png">
+      <meta itemprop="name" content="zihuizh">
+      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋水时至">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab06/" class="post-title-link" itemprop="url">Lab06</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-21 17:25:35 / Modified: 17:30:04" itemprop="dateCreated datePublished" datetime="2023-11-21T17:25:35+08:00">2023-11-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/lab/lab06/">Lab06-Web</a><br><a href="file:///E:\Code\CS61A\lab\lab06">Lab06-File</a></p>
+<h1 id="Nonlocal-Codewriting"><a href="#Nonlocal-Codewriting" class="headerlink" title="Nonlocal Codewriting"></a>Nonlocal Codewriting</h1><h2 id="Q1-Make-Adder-Increasing"><a href="#Q1-Make-Adder-Increasing" class="headerlink" title="Q1: Make Adder Increasing"></a>Q1: Make Adder Increasing</h2><p><code>nonlocal</code>使得父函数中变量走入子函数中，相当于父函数提供了一个变量环境供子函数来使用。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">make_adder_inc</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; adder1 = make_adder_inc(5)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; adder2 = make_adder_inc(6)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; adder1(2)</span></span><br><span class="line"><span class="string">    7</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; adder1(2) # 5 + 2 + 1</span></span><br><span class="line"><span class="string">    8</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; adder1(10) # 5 + 10 + 2</span></span><br><span class="line"><span class="string">    17</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; [adder1(x) for x in [1, 2, 3]]</span></span><br><span class="line"><span class="string">    [9, 11, 13]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; adder2(5)</span></span><br><span class="line"><span class="string">    11</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    n = <span class="number">0</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">adder</span>(<span class="params">b</span>):</span><br><span class="line">        <span class="keyword">nonlocal</span> n</span><br><span class="line">        k = a + b + n</span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> k</span><br><span class="line">    <span class="keyword">return</span> adder</span><br></pre></td></tr></table></figure><br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab06/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ICON.png">
+      <meta itemprop="name" content="zihuizh">
+      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋水时至">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab07/" class="post-title-link" itemprop="url">Lab07</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-21 17:25:12 / Modified: 17:30:11" itemprop="dateCreated datePublished" datetime="2023-11-21T17:25:12+08:00">2023-11-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/lab/lab07/">Lab07-Web</a><br><a href="file:///E:\Code\CS61A\lab\lab07">Lab07-File</a></p>
+<h1 id="Q1-Subsequences"><a href="#Q1-Subsequences" class="headerlink" title="Q1: Subsequences"></a>Q1: Subsequences</h1><p>A subsequence of a sequence <code>S</code> is a sequence of elements from <code>S</code>, in the same order they appear in <code>S</code>, but possibly with elements missing. Thus, the lists <code>[]</code>, <code>[1, 3]</code>, <code>[2]</code>, and <code>[1, 2, 3]</code> are some (but not all) of the subsequences of <code>[1, 2, 3]</code>. Write a function that takes a list and returns a list of lists, for which each individual list is a subsequence of the original input.<br>In order to accomplish this, you might first want to write a function <code>insert_into_all</code> that takes an item and a list of lists, adds the item to the beginning of nested list, and returns the resulting list.<br><code>insert_into_all</code>其实是在给我们提示，下面的求子集就可以直接使用<code>subseqs(s[1:])</code>，即<code>s[1:]</code>的所有子集S以及用<code>s[0]</code>插入到S中集合，这两者的并集就是<code>s</code>的所有子集。<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab07/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/08/08/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Project%20Cats/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -649,361 +983,6 @@ F_x & F_y &F_z\ \
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ICON.png">
-      <meta itemprop="name" content="zihuizh">
-      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="秋水时至">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/" class="post-title-link" itemprop="url">Doctest</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-05-04 23:33:00" itemprop="dateCreated datePublished" datetime="2023-05-04T23:33:00+08:00">2023-05-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-05-05 16:43:28" itemprop="dateModified" datetime="2023-05-05T16:43:28+08:00">2023-05-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<h2 id="Excerpt"><a href="#Excerpt" class="headerlink" title="Excerpt"></a>Excerpt</h2><p>DoctestDoctest是一个轻量级的单元测试框架，官方对其定义如下： doctest 模块寻找像Python交互式代码的文本，然后执行这些代码来确保它们的确就像展示的那样正确运行，有许多方法来使用doctest：示例””&amp;#…</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/Doctest/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ICON.png">
-      <meta itemprop="name" content="zihuizh">
-      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="秋水时至">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/" class="post-title-link" itemprop="url">Textbook chapter 1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-05-05 16:43:51" itemprop="dateModified" datetime="2023-05-05T16:43:51+08:00">2023-05-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Textbook"><a href="#Textbook" class="headerlink" title="Textbook"></a>Textbook</h1><h2 id="1-3-Defining-New-Functions"><a href="#1-3-Defining-New-Functions" class="headerlink" title="1.3 Defining New Functions"></a>1.3 Defining New Functions</h2><p><a target="_blank" rel="noopener" href="http://composingprograms.com/pages/13-defining-new-functions.html">Web</a></p>
-<ul>
-<li>编程语言中所具有的特性：<ol>
-<li>数字和四则运算符是基础的内置数据与函数。</li>
-<li>函数之间的嵌套提供了组合运算符的方法。</li>
-<li>将名称与数值绑定在一起提供了一种有限的抽象方法。</li>
-</ol>
-</li>
-<li>定义函数——一种更强大的抽象方法，可以将名字（函数名）与一系列运算绑定在一起，并看作一个单元。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Textbook%20chapter%201/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ICON.png">
-      <meta itemprop="name" content="zihuizh">
-      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="秋水时至">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/" class="post-title-link" itemprop="url">Tree Recursion</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-05-05 16:43:44" itemprop="dateModified" datetime="2023-05-05T16:43:44+08:00">2023-05-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLx38hZJ5RLZetpo06AQzyDIihcEvcRJsa">Tree Recursion</a></p>
-<h1 id="Tree-Recursion"><a href="#Tree-Recursion" class="headerlink" title="Tree Recursion"></a>Tree Recursion</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Compute the nth Fibonacci number.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; fib(8)</span></span><br><span class="line"><span class="string">    21</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">elif</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fib(n-<span class="number">2</span>) + fib(n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p>斐波那契数列，调用两次自身。<br>这种方式效率很低，同一项被计算了多次。如果存储了每一项，计算速度会快很多。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Tree%20Recursion/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ICON.png">
-      <meta itemprop="name" content="zihuizh">
-      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="秋水时至">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/" class="post-title-link" itemprop="url">Lab05</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-05-04 23:32:59" itemprop="dateCreated datePublished" datetime="2023-05-04T23:32:59+08:00">2023-05-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-05-05 16:47:04" itemprop="dateModified" datetime="2023-05-05T16:47:04+08:00">2023-05-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/lab/lab05/#list-comprehensions">Lab05-Web</a><br><a href="E:\Code\CS61A\lab\lab05">Lab05-File</a></p>
-<h1 id="Topics"><a href="#Topics" class="headerlink" title="Topics"></a>Topics</h1><h2 id="List-Comprehensions"><a href="#List-Comprehensions" class="headerlink" title="List Comprehensions"></a>List Comprehensions</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&lt;expression&gt; <span class="keyword">for</span> &lt;element&gt; <span class="keyword">in</span> &lt;sequence&gt; <span class="keyword">if</span> &lt;conditional&gt;]</span><br></pre></td></tr></table></figure>
-<p>Example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>]</span><br><span class="line">[<span class="number">4</span>, <span class="number">16</span>]</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/05/04/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab05/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1075,7 +1054,7 @@ F_x & F_y &F_z\ \
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

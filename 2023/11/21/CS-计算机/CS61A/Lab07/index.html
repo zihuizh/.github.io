@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zihuizh.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Lab07-WebLab07-File Q1: SubsequencesA subsequence of a sequence S is a sequence of elements from S, in the same order they appear in S, but possibly with elements missing. Thus, the lists [], [1, 3],">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lab07">
+<meta property="og:url" content="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab07/index.html">
+<meta property="og:site_name" content="秋水时至">
+<meta property="og:description" content="Lab07-WebLab07-File Q1: SubsequencesA subsequence of a sequence S is a sequence of elements from S, in the same order they appear in S, but possibly with elements missing. Thus, the lists [], [1, 3],">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-11-21T09:25:12.694Z">
+<meta property="article:modified_time" content="2023-11-21T09:30:11.097Z">
+<meta property="article:author" content="zihuizh">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab07/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Lab07 | 秋水时至</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">秋水时至</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://zihuizh.github.io/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ICON.png">
+      <meta itemprop="name" content="zihuizh">
+      <meta itemprop="description" content="吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋水时至">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lab07
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-21 17:25:12 / Modified: 17:30:11" itemprop="dateCreated datePublished" datetime="2023-11-21T17:25:12+08:00">2023-11-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">CS-计算机</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/" itemprop="url" rel="index"><span itemprop="name">CS61A</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61a/su20/lab/lab07/">Lab07-Web</a><br><a href="file:///E:\Code\CS61A\lab\lab07">Lab07-File</a></p>
+<h1 id="Q1-Subsequences"><a href="#Q1-Subsequences" class="headerlink" title="Q1: Subsequences"></a>Q1: Subsequences</h1><p>A subsequence of a sequence <code>S</code> is a sequence of elements from <code>S</code>, in the same order they appear in <code>S</code>, but possibly with elements missing. Thus, the lists <code>[]</code>, <code>[1, 3]</code>, <code>[2]</code>, and <code>[1, 2, 3]</code> are some (but not all) of the subsequences of <code>[1, 2, 3]</code>. Write a function that takes a list and returns a list of lists, for which each individual list is a subsequence of the original input.<br>In order to accomplish this, you might first want to write a function <code>insert_into_all</code> that takes an item and a list of lists, adds the item to the beginning of nested list, and returns the resulting list.<br><code>insert_into_all</code>其实是在给我们提示，下面的求子集就可以直接使用<code>subseqs(s[1:])</code>，即<code>s[1:]</code>的所有子集S以及用<code>s[0]</code>插入到S中集合，这两者的并集就是<code>s</code>的所有子集。<br><span id="more"></span><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">insert_into_all</span>(<span class="params">item, nested_list</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Assuming that nested_list is a list of lists, return a new list</span></span><br><span class="line"><span class="string">    consisting of all the lists in nested_list, but with item added to</span></span><br><span class="line"><span class="string">    the front of each.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; nl = [[], [1, 2], [3]]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; insert_into_all(0, nl)</span></span><br><span class="line"><span class="string">    [[0], [0, 1, 2], [0, 3]]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> [[item]+<span class="built_in">list</span> <span class="keyword">for</span> <span class="built_in">list</span> <span class="keyword">in</span> nested_list]</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">subseqs</span>(<span class="params">s</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Assuming that S is a list, return a nested list of all subsequences</span></span><br><span class="line"><span class="string">    of S (a list of lists). The subsequences can appear in any order.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; seqs = subseqs([1, 2, 3])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sorted(seqs)</span></span><br><span class="line"><span class="string">    [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; subseqs([])</span></span><br><span class="line"><span class="string">    [[]]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> s == []:</span><br><span class="line">        <span class="keyword">return</span> [[]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        a = subseqs(s[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">return</span> a + insert_into_all(s[<span class="number">0</span>],a)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Q2-Increasing-Subsequences"><a href="#Q2-Increasing-Subsequences" class="headerlink" title="Q2: Increasing Subsequences"></a>Q2: Increasing Subsequences</h1><p>Just like the last question, we want to write a function that takes a list and returns a list of lists, where each individual list is a subsequence of the original input.<br>This time we have another condition: we only want the subsequences for which consecutive elements are <em>nondecreasing</em>. For example, <code>[1, 3, 2]</code> is a subsequence of <code>[1, 3, 2, 4]</code>, but since 2 &lt; 3, this subsequence would <em>not</em> be included in our result.<br><strong>Fill in the blanks</strong> to complete the implementation of the <code>inc_subseqs</code> function. You may assume that the input list contains no negative elements.<br>You may use the provided helper function <code>insert_into_all</code>, which takes in an <code>item</code> and a list of lists and inserts the <code>item</code> to the front of each list.<br>上一问的进阶版，要求所有元素是升序的，这就要求进行判断，必然要有<code>s[0]</code>和<code>prev</code>两个元素进行比较，如果<code>s[0] &lt; prev</code>，自然不行，往下继续从<code>s[1]</code>开始找，如果<code>s[0] &gt; prev</code>，那么<code>s[1:]</code>对应的子集就是<code>s[0]</code>作为新的<code>prev</code>，插入<code>s[0]</code>，此时注意对于<code>s[0]</code>不插入的部分，其实是不要求<code>s[0]</code>，因此这里仍使用<code>prev</code>。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">inc_subseqs</span>(<span class="params">s</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Assuming that S is a list, return a nested list of all subsequences</span></span><br><span class="line"><span class="string">    of S (a list of lists) for which the elements of the subsequence</span></span><br><span class="line"><span class="string">    are strictly nondecreasing. The subsequences can appear in any order.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; seqs = inc_subseqs([1, 3, 2])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sorted(seqs)</span></span><br><span class="line"><span class="string">    [[], [1], [1, 2], [1, 3], [2], [3]]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; inc_subseqs([])</span></span><br><span class="line"><span class="string">    [[]]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; seqs2 = inc_subseqs([1, 1, 2])</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; sorted(seqs2)</span></span><br><span class="line"><span class="string">    [[], [1], [1], [1, 1], [1, 1, 2], [1, 2], [1, 2], [2]]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">subseq_helper</span>(<span class="params">s, prev</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> [[]]</span><br><span class="line">        <span class="keyword">elif</span> s[<span class="number">0</span>] &lt; prev:</span><br><span class="line">            <span class="keyword">return</span> subseq_helper(s[<span class="number">1</span>:],prev)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            a = subseq_helper(s[<span class="number">1</span>:],s[<span class="number">0</span>])   <span class="comment"># s[0]要插入的，后续的子集都需要和s[0]比较</span></span><br><span class="line">            b = subseq_helper(s[<span class="number">1</span>:],prev)   <span class="comment"># s[0]不插入，跳过的，后续的子集直接和prev比较</span></span><br><span class="line">            <span class="keyword">return</span> insert_into_all(s[<span class="number">0</span>], a) + b</span><br><span class="line">    <span class="keyword">return</span> subseq_helper(s, -<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Q3-Trade"><a href="#Q3-Trade" class="headerlink" title="Q3: Trade"></a>Q3: Trade</h1><p>In the integer market, each participant has a list of positive integers to trade. When two participants meet, they trade the smallest non-empty prefix of their list of integers. A prefix is a slice that starts at index 0.<br>Write a function <code>trade</code> that exchanges the first <code>m</code> elements of list <code>first</code> with the first <code>n</code> elements of list <code>second</code>, such that the sums of those elements are equal, and the sum is as small as possible. If no such prefix exists, return the string <code>&#39;No deal!&#39;</code> and do not change either list. Otherwise change both lists and return <code>&#39;Deal!&#39;</code>. A partial implementation is provided.<br>这一题较为简单，只需判断前几项大小，相等就退出，谁小谁就多加一项，直到遍历完整个数组。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">trade</span>(<span class="params">first, second</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Exchange the smallest prefixes of first and second that have equal sum.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; a = [1, 1, 3, 2, 1, 1, 4]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b = [4, 3, 2, 7]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; trade(a, b) # Trades 1+1+3+2=7 for 4+3=7</span></span><br><span class="line"><span class="string">    &#x27;Deal!&#x27;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; a</span></span><br><span class="line"><span class="string">    [4, 3, 1, 1, 4]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b</span></span><br><span class="line"><span class="string">    [1, 1, 3, 2, 2, 7]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; c = [3, 3, 2, 4, 1]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; trade(b, c)</span></span><br><span class="line"><span class="string">    &#x27;No deal!&#x27;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b</span></span><br><span class="line"><span class="string">    [1, 1, 3, 2, 2, 7]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; c</span></span><br><span class="line"><span class="string">    [3, 3, 2, 4, 1]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; trade(a, c)</span></span><br><span class="line"><span class="string">    &#x27;Deal!&#x27;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; a</span></span><br><span class="line"><span class="string">    [3, 3, 2, 1, 4]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; b</span></span><br><span class="line"><span class="string">    [1, 1, 3, 2, 2, 7]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; c</span></span><br><span class="line"><span class="string">    [4, 3, 1, 4, 1]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    m, n = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    equal_prefix = <span class="keyword">lambda</span>: <span class="built_in">sum</span>(first[:m]) == <span class="built_in">sum</span>(second[:n])</span><br><span class="line">    <span class="keyword">while</span> m &lt; <span class="built_in">len</span>(first)-<span class="number">1</span> <span class="keyword">and</span> n &lt; <span class="built_in">len</span>(second)-<span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> equal_prefix():</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">sum</span>(first[:m]) &lt; <span class="built_in">sum</span>(second[:n]):</span><br><span class="line">            m += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            n += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> equal_prefix():</span><br><span class="line">        first[:m], second[:n] = second[:n], first[:m]</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;Deal!&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;No deal!&#x27;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Q4-Reverse"><a href="#Q4-Reverse" class="headerlink" title="Q4: Reverse"></a>Q4: Reverse</h1><p>Write a function that reverses the given list. Be sure to mutate the original list. This is practice, so don’t use the built-in <code>reverse</code> function!</p>
+<blockquote>
+<p><strong>Hint:</strong> You may notice that this problem appears similar to Reverse in Lab 5. However, unlike the implementations in Lab5, this function should NOT return anything. This is to emphasize that this function should utilize mutability.</p>
+</blockquote>
+<p>也很简单，直接循环把各项交换一下就行，注意<code>a,b=b,a</code>的执行顺序。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">lst</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Reverses lst using mutation.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; original_list = [5, -1, 29, 0]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; reverse(original_list)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; original_list</span></span><br><span class="line"><span class="string">    [0, 29, -1, 5]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; odd_list = [42, 72, -8]</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; reverse(odd_list)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; odd_list</span></span><br><span class="line"><span class="string">    [-8, 72, 42]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    l = <span class="built_in">len</span>(lst)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(l//<span class="number">2</span>):</span><br><span class="line">        lst[i],lst[l-i-<span class="number">1</span>] = lst[l-i-<span class="number">1</span>],lst[i]</span><br></pre></td></tr></table></figure></p>
+<h1 id="Q5-Glookup"><a href="#Q5-Glookup" class="headerlink" title="Q5: Glookup"></a>Q5: Glookup</h1><p>Now we will be making our own version of <code>glookup</code>, which keeps track of one’s current grade out of the assignments completed so far (you can use this to keep track of your points throughout the rest of the semester!)<br><code>glookup</code> takes in the following dictionary of assignment names mapped to their total point values:<br>此题也较为简单，在这一函数下创立的变量在该函数环境中执行操作，从而完成累加操作。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">cs61a = &#123;</span><br><span class="line">    <span class="string">&quot;Homework&quot;</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">&quot;Lab&quot;</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">&quot;Exam&quot;</span>: <span class="number">50</span>,</span><br><span class="line">    <span class="string">&quot;Final&quot;</span>: <span class="number">80</span>,</span><br><span class="line">    <span class="string">&quot;PJ1&quot;</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="string">&quot;PJ2&quot;</span>: <span class="number">15</span>,</span><br><span class="line">    <span class="string">&quot;PJ3&quot;</span>: <span class="number">25</span>,</span><br><span class="line">    <span class="string">&quot;PJ4&quot;</span>: <span class="number">30</span>,</span><br><span class="line">    <span class="string">&quot;Extra credit&quot;</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">make_glookup</span>(<span class="params">class_assignments</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot; Returns a function which calculates and returns the current</span></span><br><span class="line"><span class="string">    grade out of what assignments have been entered so far.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; student1 = make_glookup(cs61a) # cs61a is the above dictionary</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; student1(&quot;Homework&quot;, 1.5)</span></span><br><span class="line"><span class="string">    0.75</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; student1(&quot;Lab&quot;, 1)</span></span><br><span class="line"><span class="string">    0.8333333333333334</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; student1(&quot;PJ1&quot;, 18)</span></span><br><span class="line"><span class="string">    0.8913043478260869</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">    got = []</span><br><span class="line">    entered = []</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">name,grade</span>):</span><br><span class="line">        <span class="keyword">nonlocal</span> got, entered</span><br><span class="line">        got.append(name)</span><br><span class="line">        entered.append(grade)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sum</span>(entered)/<span class="built_in">sum</span>([cs61a[i] <span class="keyword">for</span> i <span class="keyword">in</span> got])</span><br><span class="line">    <span class="keyword">return</span> helper</span><br></pre></td></tr></table></figure></p>
+<h1 id="Q6-Number-of-Trees"><a href="#Q6-Number-of-Trees" class="headerlink" title="Q6: Number of Trees"></a>Q6: Number of Trees</h1><p>How many different possible full binary tree (each node has 2 branches or 0, but never 1) structures exist that have exactly n leaves?<br>For those interested in combinatorics, this problem does have a <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Catalan_number">closed form solution</a>):<br>折磨了我非常长时间的一道题，但是看完答案只能感叹自己的愚蠢。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">num_trees</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;How many full binary trees have exactly n leaves? E.g.,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    1   2        3       3    ...</span></span><br><span class="line"><span class="string">    *   *        *       *</span></span><br><span class="line"><span class="string">       / \      / \     / \</span></span><br><span class="line"><span class="string">      *   *    *   *   *   *</span></span><br><span class="line"><span class="string">              / \         / \</span></span><br><span class="line"><span class="string">             *   *       *   *</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; num_trees(1)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; num_trees(2)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; num_trees(3)</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; num_trees(8)</span></span><br><span class="line"><span class="string">    429</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span> <span class="keyword">or</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>([num_trees(i)*num_trees(n-i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n)]) <span class="comment"># 等于左侧二叉树数量乘以右侧二叉树数量</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Q7-Advanced-Counter"><a href="#Q7-Advanced-Counter" class="headerlink" title="Q7: Advanced Counter"></a>Q7: Advanced Counter</h1><p>Complete the definition of <code>make_advanced_counter_maker</code>, which creates a function that creates counters. These counters can not only update their personal count, but also a shared count for all counters. They can also reset either count.<br>注意利用两层函数定义<code>global_count</code>和<code>count</code>两层变量，形成了类似Class的效果。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">make_advanced_counter_maker</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Makes a function that makes counters that understands the</span></span><br><span class="line"><span class="string">    messages &quot;count&quot;, &quot;global-count&quot;, &quot;reset&quot;, and &quot;global-reset&quot;.</span></span><br><span class="line"><span class="string">    See the examples below:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; make_counter = make_advanced_counter_maker()</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; tom_counter = make_counter()</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; tom_counter(&#x27;count&#x27;)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; tom_counter(&#x27;count&#x27;)</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; tom_counter(&#x27;global-count&#x27;)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; jon_counter = make_counter()</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; jon_counter(&#x27;global-count&#x27;)</span></span><br><span class="line"><span class="string">    2</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; jon_counter(&#x27;count&#x27;)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; jon_counter(&#x27;reset&#x27;)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; jon_counter(&#x27;count&#x27;)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; tom_counter(&#x27;count&#x27;)</span></span><br><span class="line"><span class="string">    3</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; jon_counter(&#x27;global-count&#x27;)</span></span><br><span class="line"><span class="string">    3</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; jon_counter(&#x27;global-reset&#x27;)</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; tom_counter(&#x27;global-count&#x27;)</span></span><br><span class="line"><span class="string">    1</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    global_count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">make_counter</span>():</span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">private_conter</span>(<span class="params">message</span>):</span><br><span class="line">            <span class="keyword">nonlocal</span> global_count, count</span><br><span class="line">            <span class="keyword">if</span> message == <span class="string">&#x27;global-count&#x27;</span>:</span><br><span class="line">                global_count += <span class="number">1</span></span><br><span class="line">                <span class="built_in">print</span>(global_count)</span><br><span class="line">            <span class="keyword">elif</span> message == <span class="string">&#x27;global-reset&#x27;</span>:</span><br><span class="line">                global_count = <span class="number">0</span></span><br><span class="line">            <span class="keyword">elif</span> message == <span class="string">&#x27;count&#x27;</span>:</span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">                <span class="built_in">print</span>(count)</span><br><span class="line">            <span class="keyword">elif</span> message == <span class="string">&#x27;reset&#x27;</span>:</span><br><span class="line">                count = <span class="number">0</span></span><br><span class="line">            <span class="string">&quot;*** YOUR CODE HERE ***&quot;</span></span><br><span class="line">            <span class="comment"># as many lines as you want</span></span><br><span class="line">        <span class="keyword">return</span> private_conter</span><br><span class="line">    <span class="keyword">return</span> make_counter</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/08/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Project%20Cats/" rel="prev" title="Project Cats">
+      <i class="fa fa-chevron-left"></i> Project Cats
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/11/21/CS-%E8%AE%A1%E7%AE%97%E6%9C%BA/CS61A/Lab06/" rel="next" title="Lab06">
+      Lab06 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Q1-Subsequences"><span class="nav-number">1.</span> <span class="nav-text">Q1: Subsequences</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q2-Increasing-Subsequences"><span class="nav-number">2.</span> <span class="nav-text">Q2: Increasing Subsequences</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q3-Trade"><span class="nav-number">3.</span> <span class="nav-text">Q3: Trade</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q4-Reverse"><span class="nav-number">4.</span> <span class="nav-text">Q4: Reverse</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q5-Glookup"><span class="nav-number">5.</span> <span class="nav-text">Q5: Glookup</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q6-Number-of-Trees"><span class="nav-number">6.</span> <span class="nav-text">Q6: Number of Trees</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q7-Advanced-Counter"><span class="nav-number">7.</span> <span class="nav-text">Q7: Advanced Counter</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zihuizh"
+      src="/images/ICON.png">
+  <p class="site-author-name" itemprop="name">zihuizh</p>
+  <div class="site-description" itemprop="description">吾在天地之间，犹小石小木之在大山也。方存乎见少，又奚以自多！四海之在天地之间，不似毫末之在于马体乎？五帝之所连，三王之所争，仁人之所忧，任士之所劳，尽此矣！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zihuizh</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
